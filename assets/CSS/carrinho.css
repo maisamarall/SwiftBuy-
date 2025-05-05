@@ -1,0 +1,59 @@
+/* Carrinho de produtos */
+.container-cart {
+    margin-left: 100px;
+    margin-right: 300px;
+}
+
+.container-cart hr {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #D0C8C8;
+}
+
+#quantidade-button {
+    width: 100px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #ffff;
+    border: solid 2px #D4C8C8;
+    transition: border-color 0.3s ease; 
+}
+
+#quantidade-button:hover,
+#quantidade-button:focus {
+    border-color: #09A2E9;
+    outline: none;
+}
+
+
+/* Recomendações */
+.recomendacoes {
+    margin-top: 300px;
+}
+
+/* Resumo de compra */
+.resumo_compra {
+    width: 350px;
+    height: 436px;
+    margin-left: 300px;
+    margin-right: 100px;
+    border-radius: 20px;
+}
+
+.resumo_compra hr{
+    width: 310px;
+    margin-right: 40px;
+    color: #D0C8C8;
+}
+
+.resumo_compra button{
+    width: 311px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.resumo_compra button a{
+    color: #000;
+    font-size: 16px;
+}
