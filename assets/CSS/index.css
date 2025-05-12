@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+.filter-slate-400 {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(10%) saturate(250%) hue-rotate(185deg) brightness(90%) contrast(85%);
+}
+
+.carousel{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;               /* Chrome/Safari */
+}
+
+
+.link-animado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 4px 0;
+}
+
+.link-animado::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #2563eb; /* azul-600 (Tailwind) */
+    transition: width 0.3s ease-in-out;
+}
+
+.link-animado:hover::after {
+    width: 100%;
+}
