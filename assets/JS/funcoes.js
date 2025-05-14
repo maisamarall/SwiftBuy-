@@ -205,7 +205,6 @@ function scrollRight(carouselId) {
   });
 }
   
-  
   //da simone
   function cardsNovos(produto) {
       return `

@@ -15,3 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector("#barraSuperior").scrollIntoView({ behavior: "smooth" });
     });
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrar = document.getElementById("filtrar");
+    const opcoes = document.getElementById("opcoes");
+    
+    filtrar.addEventListener('click', () => {
+        opcoes.classList.toggle("hidden");
+    });
+});
