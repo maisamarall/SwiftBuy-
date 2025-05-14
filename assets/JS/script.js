@@ -17,10 +17,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const filtrar = document.getElementById("filtrar");
-    const opcoes = document.getElementById("opcoes");
+    const filtrarAcessados = document.getElementById("filtrar");
+    const opcoesAcessados = document.getElementById("opcoes");
     
-    filtrar.addEventListener('click', () => {
-        opcoes.classList.toggle("hidden");
+    filtrarAcessados.addEventListener('click', () => {
+        opcoesAcessados.classList.toggle("hidden");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrarLancamentos = document.getElementById("filtrar1");
+    const opcoesLancamentos = document.getElementById("opcoes1");
+    
+    filtrarLancamentos.addEventListener('click', () => {
+        opcoesLancamentos.classList.toggle("hidden");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrarProdutos = document.getElementById("filtrar2");
+    const opcoesProdutos = document.getElementById("opcoes2");
+    
+    filtrarProdutos.addEventListener('click', () => {
+        opcoesProdutos.classList.toggle("hidden");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtrarPromocoes = document.getElementById("filtrar3");
+    const opcoesPromocoes = document.getElementById("opcoes3");
+    
+    filtrarPromocoes.addEventListener('click', () => {
+        opcoesPromocoes.classList.toggle("hidden");
     });
 });
