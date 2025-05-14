@@ -51,3 +51,68 @@ document.addEventListener('DOMContentLoaded', () => {
         opcoesPromocoes.classList.toggle("hidden");
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const acessarInformacoes = document.getElementById("acessarInformacoes");
+    const exibirInformacoes = document.getElementById("exibirInformacoes");
+
+    acessarInformacoes.addEventListener('click', () => {
+        exibirInformacoes.classList.toggle("hidden");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const acessar = document.getElementById("acessar");
+    const exibir = document.getElementById("exibir");
+
+    acessar.addEventListener('click', () => {
+        exibir.classList.toggle("hidden");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const editarInformacao = document.getElementById("editar-informacao");
+    const formEditar = document.getElementById("form-editar");
+    const remover = document.getElementById("remover");
+
+    editarInformacao.addEventListener('click', () => {
+        formEditar.classList.toggle("hidden");
+    });
+
+    remover.addEventListener('click', () => {
+        remover.closest("div");
+        formEditar.classList.add("hidden");
+
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cadastrarProduto = document.getElementById("cadastrar-produtos");
+    const formCadastrar = document.getElementById("form-cadastrar");
+    const remover = document.getElementById("remover1");
+
+    cadastrarProduto.addEventListener('click', () => {
+        formCadastrar.classList.toggle("hidden");
+    });
+
+    remover.addEventListener('click', () => {
+        remover.closest("div");
+        formCadastrar.classList.add("hidden");
+
+    });
+});
+
+
+
+function mostrarImagem(event, idPreview, input) {
+    const arquivo = event.target.files[0];
+    const preview = document.getElementById(idPreview);
+    const span = input.previousElementSibling;
+
+    if (arquivo) {
+        preview.src = URL.createObjectURL(arquivo);
+        preview.classList.remove("hidden");
+        if (span) span.classList.add("hidden"); 
+    }
+}
+

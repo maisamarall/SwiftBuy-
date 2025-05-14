@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 * {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Urbanist", sans-serif;
 }
 
 .filter-slate-400 {
     filter: brightness(0) saturate(100%) invert(75%) sepia(10%) saturate(250%) hue-rotate(185deg) brightness(90%) contrast(85%);
+}
+
+.informacoes-vendedor {
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+.titulo {
+    font-family: "Archivo Black", sans-serif;
 }
