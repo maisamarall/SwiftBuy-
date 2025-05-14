@@ -76,16 +76,17 @@
                 <p class="text-slate-800"><i class="bi bi-arrow-right-short"></i></p>
                 <p>Mais acessados</p>
 
-                <div class="absolute z-50 right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28">
+                <div class="absolute group inline-block z-50 right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28">
                     <button class="flex text-gray-500  gap-2 hover:text-gray-400" id="filtrar">
                         <i class="bi bi-funnel-fill"></i>
                         <p>Filtrar</p>
                     </button>
-                </div>
+                
 
-                <div class="hidden fixed z-50 mt-8 text-gray-600 bg-[#F9FAFB] shadow-md w-35 h-20 pt-3 pl-3 text-sm/7 rounded-sm right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28" id="opcoes">
-                    <p class="hover:text-gray-800">Preço</p>
-                    <p class="hover:text-gray-800">Mais vendidos</p>
+                    <div class="hidden grid justify-items-start fixed z-50 mt-2 text-gray-600 bg-[#F9FAFB] shadow-md w-35 h-20 sm:w-40 sm:h-23 sm:pb-3 sm:pl-5 pt-3 pl-3 text-sm/7 sm:text-[16px] rounded-lg right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28 group-hover:grid" id="opcoes">
+                        <button class="hover:text-blue-400"> Preço</button>
+                        <button class="hover:text-blue-400 sm:mt-2">Mais vendidos</button>
+                    </div>
                 </div>
             </div>
     
