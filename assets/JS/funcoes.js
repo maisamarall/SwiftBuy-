@@ -210,13 +210,26 @@ function scrollRight(carouselId) {
       return `
         <div class="w-full lg:mt-10 grid grid-cols-2 px-5 mt-5 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
           <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 h-45 w-35 lg:h-65 lg:w-45 rounded-md shadow-md hover:border-2 hover:border-blue-400">
-            <img src="./assets/imgs/index-imgs/produto10.png" alt="Luva de box" class="w-20 ml-7.5 mt-2 lg:w-30 lg:mt-5">
-            <p class="ml-3 mt-4 text-[13px] lg:text-base lg:ml-4">R$ 136</p>
-            <p class="ml-3 mt-2 lg:ml-4">Blow Fight Profissional saco de box 1,20cm ...</p>
+            <img src="${produto.imagem}" alt="${produto.nome}" class="w-20 ml-7.5 mt-2 lg:w-30 lg:mt-5">
+            <p class="ml-3 mt-4 text-[13px] lg:text-base lg:ml-4">${produto.preco}</p>
+            <p class="ml-3 mt-2 lg:ml-4">${produto.descricao}</p>
           </div>
         </div>
       `;
   }
   
+  function cardFavoritos(produto) {
+    return `
+        <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 h-45 w-35 lg:h-65 lg:w-45 rounded-md shadow-md">
+            <img src="./assets/imgs/produto10.png" alt="Luva de box" class="w-20 ml-7.5 mt-2 lg:w-30 lg:mt-5">
+            <p class="ml-3 mt-4 text-[13px] lg:text-base lg:ml-4">${produto.preco}</p>
+            <p class="ml-3 mt-2 lg:ml-4">${produto.descricao}</p>
+
+            <button class="border border-blue-400 rounded-lg h-7 w-14 sm:h-8 sm:w-17 text-blue-400 font-semibold mt-7 ml-11 lg:mt-12 lg:ml-13 text-[13px] hover:text-blue-600 hover:border-blue-600 active:opacity-70">
+                Excluir
+            </button>
+        </div>
+    `;
+  }
   
   
