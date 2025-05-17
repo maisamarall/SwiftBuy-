@@ -1,71 +1,32 @@
 /* Carrinho de produtos */
-
 .container-cart hr {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: #D0C8C8;
+    font-weight: bold;
+    color: #000;
 }
 
-#quantidade-button {
-    width: 100px;
+.quantidade-container {
+    width: 110px;
     height: 36px;
+    padding: 15px;
     margin-top: 25px;
+    margin-right: 20px;
     border-radius: 10px;
     background-color: #ffff;
     border: solid 2px #D4C8C8;
     transition: border-color 0.3s ease; 
 }
 
-#quantidade-button:hover,
-#quantidade-button:focus {
+.quantidade-container:hover,
+.quantidade-container:focus {
     border-color: #09A2E9;
     outline: none;
 }
 
-/* Resumo de compra */
-.resumo_compra {
-    border-radius: 20px;
-}
-
-.resumo_compra hr{
-    width: 280px;
-    margin-right: 40px;
-    color: #D0C8C8;
-}
-
-.resumo_compra button{
-    width: 250px;
-    height: 50px;
-    border-radius: 10px;
-}
-
-.resumo_compra button a{
-    color: #fff;
-    font-size: 16px;
-}
-
-.resumo_compra a i{
-    margin-right: 10px;
-}
-
-/* Recomendações */
-.recomendacoes {
-    max-width: 100%;
-    margin-top: 50px;
-    padding: 15px;
-    margin: 70px;
-}
-
-.recomendacoes .card_produto {
-    width: 250px;
-    height: 430px;
-    text-align: center;
-    border: 2px solid transparent;
-   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.recomendacoes .card_produto:hover {
-    border-color: #3b82f6; /* Azul Tailwind (equivalente a 'border-blue-500') */
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* leve destaque opcional */
+.cep:hover,
+.quantidade-container:focus {
+    border-color: #09A2E9;
+    outline: none;
 }
