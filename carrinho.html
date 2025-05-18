@@ -20,75 +20,350 @@
 
     <main>
       <section class="py-8 antialiased md:py-16">
-        <div class="container mx-auto flex flex-col lg:flex-row items-start gap-6">
-  
+        <div class="flex flex-col lg:flex-row gap-6">
           <!-- Carrinho de Produtos -->
-          <div class="w-full lg:w-2/3">
-            <div class="container-cart">
-              <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        
-                <div class="mt-6 sm:mt-8 md:gap-6">
-                  <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-        
-                    <div class="space-y-6">
-                      <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
-        
-                        <h2 class="flex items-center gap-2 text-[20px] font-medium text-black-900"> 
-                                <input type="checkbox" id="toggle1" class="peer hidden" /> 
-                                <label for="toggle1" class="w-[19px] h-[19px] flex items-center justify-center rounded border-2 border-gray-300 cursor-pointer transition peer-checked:bg-blue-500 peer-checked:border-blue-600 mr-4"> 
-                                </label> 
-                                Produtos da SwiftBuy 
-                              </h2>
-                            <hr>
-        
-                        <!-- Produto 1 -->
-                        <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-                          <!-- Imagem do Produto -->
-                          <a href="#" class="shrink-0 md:order-1">
-                            <img class="h-20 w-20" src="./assets/imgs/produtos_carrinho/produto_1.jpg" alt="Produto 1" />
-                          </a>
-        
-                          <div class="flex items-center justify-between md:order-3 md:justify-end">
-                            <div class="flex items-center">
-                              <!-- Botão de definir a quantidade -->
-                              <button type="button" id="quantidade-button" data-input-counter-decrement="counter-input" class="inline-flex h-5 w-5 shrink-0 items-center justify-center">
-        
-                                <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+      <div class="w-full lg:w-2/3 px-4 sm:px-6">
+        <div class="container-cart">
+          <div class="mx-auto max-w-md lg:max-w-none lg:mx-0">
+    
+            <div class="mt-6 sm:mt-8 md:gap-6">
+              <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+    
+                <div class="space-y-6">
+                  <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
+    
+                    <h2 class="flex items-center gap-2 text-[20px] font-bold text-black-900"> 
+                      <input type="checkbox" id="toggle1" class="peer hidden" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-basket-fill" viewBox="0 0 16 16">
+                    <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0z"/>
+                    </svg>  
+                    <span>Produtos da SwiftBuy</span>  
+                    </h2>
+                    <hr class="w-[100%] mx-auto my-4">
+    
+                    <!-- Produto 1: -->
+                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="1" data-preco="2.499,00" data-nome="Notebook Samsung galaxy Book4">
+                      <!-- Imagem do Produto -->
+                      <a href="#" class="shrink-0 md:order-1">
+                        <img class="h-20 w-20 ml-3 mr-3" src="./assets/imgs/carrinho-produto/produto_1.jpg" alt="Produto 1" />
+                      </a>
+    
+                      <div class="flex items-center justify-between md:order-3 md:justify-end">
+                        <div class="flex items-center mt-5">
+                          <!-- Botão de definir a quantidade -->
+                          <div class="quantidade-container inline-flex items-center">
+                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
                               </svg>
-        
-                                <input type="text" id="counter-input" data-input-counter class="w-10 shrink-0 border-0 bg-transparent text-center text-[15px] font-semibold text-black-500 focus:outline-none focus:ring-0" placeholder="" value="1" required />
-        
-                                <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                                </svg>
-                              </button>
-                            </div>
-        
-                            <div class="text-end md:order-4 md:w-32">
-                              <p class="text-[16px] font-bold text-black-900">R$ 1.291,58</p>
-                            </div>
+                            </button>
+                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
+                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                              </svg>
+                            </button>
                           </div>
-        
-                           <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                              <!-- Nome do produto -->
-                              <h2 class="text-[15px] font-medium text-black-900">PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard layout INT</h2>
-              
-                              <div class="flex items-center gap-4">
-                                <!-- Botão de Excluir e Comprar -->
-                                <button type="button" class="inline-flex items-center text-[16px] font-semibold text-[#09A2E9]  hover:text-red-900">
-                                      Excluir
-                                    </button>
-              
-                                <button type="button" class="inline-flex items-center text-[16px] font-semibold text-[#09A2E9] hover:text-blue-900">
-                                      Comprar agora
-                                    </button>
-                              </div>
-                                </div>
-                              </div>
-                              <hr>
-                              
-                        <h2 class="text-[20px] font-medium text-black-900 sm:text-2xl">Frete:</h2>
+                        </div>
+    
+                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
+                          <!-- Preço do Produto -->
+                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$  2.499,00</p>
+                        </div>
+                      </div>
+    
+                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                        <!-- Nome do produto -->
+                        <h2 class="text-[18px] font-bold text-black-900 mb-10">Notebook Samsung galaxy Book4</h2>
+          
+                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
+                            <!-- Botão de Excluir e Comprar -->
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-red-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
+                              <span>Remover</span>
+                            </button>
+            
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-blue-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-bag-check-fill mr-1 sm:mr-2"></i> 
+                              <span>Comprar</span>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="w-[100%] mx-auto my-4">
+                    
+                    <!-- Produto 2: -->
+                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="2" data-preco="8.159,98" data-nome="Samsung Galaxy S25 Ultra 5G">
+                      <!-- Imagem do Produto -->
+                      <a href="#" class="shrink-0 md:order-1">
+                        <img class="h-20 w-20 ml-3 mr-3" src="./assets/imgs/carrinho-produto/produto_2.jpg" alt="Produto 2" />
+                      </a>
+    
+                      <div class="flex items-center justify-between md:order-3 md:justify-end">
+                        <div class="flex items-center mt-5">
+                          <!-- Botão de definir a quantidade -->
+                          <div class="quantidade-container inline-flex items-center">
+                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                              </svg>
+                            </button>
+                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
+                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+    
+                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
+                          <!-- Preço do Produto -->
+                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 8.159,98</p>
+                        </div>
+                      </div>
+    
+                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                        <!-- Nome do produto -->
+                        <h2 class="text-[18px] font-bold text-black-900">Samsung Galaxy S25 Ultra 5G</h2>
+          
+                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
+                            <!-- Botão de Excluir e Comprar -->
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-red-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
+                              <span>Remover</span>
+                            </button>
+            
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-blue-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-bag-check-fill mr-1 sm:mr-2"></i> 
+                              <span>Comprar</span>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="w-[100%] mx-auto my-4">
+
+                    <!-- Produto 3: -->
+                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="2" data-preco="110,00" data-nome="Capa Protetora Premium Roxa">
+                      <!-- Imagem do Produto -->
+                      <a href="#" class="shrink-0 md:order-1">
+                        <img class="h-20 w-20 ml-3 mr-3" src="./assets/imgs/carrinho-produto/produto_3.jpg" alt="Produto 3" />
+                      </a>
+    
+                      <div class="flex items-center justify-between md:order-3 md:justify-end">
+                        <div class="flex items-center mt-5">
+                          <!-- Botão de definir a quantidade -->
+                          <div class="quantidade-container inline-flex items-center">
+                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                              </svg>
+                            </button>
+                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
+                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+    
+                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
+                          <!-- Preço do Produto -->
+                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 110,00</p>
+                        </div>
+                      </div>
+    
+                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                        <!-- Nome do produto -->
+                        <h2 class="text-[18px] font-bold text-black-900">Capa Protetora Premium Roxa</h2>
+          
+                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
+                            <!-- Botão de Excluir e Comprar -->
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-red-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
+                              <span>Remover</span>
+                            </button>
+            
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-blue-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-bag-check-fill mr-1 sm:mr-2"></i> 
+                              <span>Comprar</span>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="w-[100%] mx-auto my-4">
+
+                    <!-- Seção de Seguros e Assistências -->
+                    <h2 class="flex items-center gap-2 text-[20px] font-bold text-black-900 mt-20"> 
+                      <input type="checkbox" id="toggle2" class="peer hidden" /> 
+                      
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z"/>
+                      </svg>
+                      <span>Seguros e Assistências</span> 
+                    </h2>
+                    <hr class="w-[100%] mx-auto my-4">
+
+                    <!-- Seguro contra quebra -->
+                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="3" data-preco="500,00" data-nome="Seguro contra quebra">
+                      <!-- Imagem do Produto -->
+                      <a href="#" class="shrink-0 md:order-1">
+                        <img class="h-20 w-20 ml-3 mr-3" src="./assets/imgs/carrinho-produto/seguro.jpeg" alt="Seguro contra quebra" />
+                      </a>
+    
+                      <div class="flex items-center justify-between md:order-3 md:justify-end">
+                        <div class="flex items-center mt-5">
+                          <!-- Botão de definir a quantidade -->
+                          <div class="quantidade-container inline-flex items-center">
+                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                              </svg>
+                            </button>
+                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
+                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+    
+                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
+                          <!-- Preço do Produto -->
+                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 500,00</p>
+                        </div>
+                      </div>
+    
+                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                        <!-- Nome do produto -->
+                        <h2 class="text-[18px] font-bold text-black-900">Seguro contra quebra <span class="text-sm font-semibold text-gray-500">(12 meses)</span></h2>
+          
+                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
+                            <!-- Botão de Excluir e Comprar -->
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-red-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
+                              <span>Remover</span>
+                            </button>
+            
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-blue-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-bag-check-fill mr-1 sm:mr-2"></i> 
+                              <span>Comprar</span>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="w-[100%] mx-auto my-4">
+
+                    <!-- Assistência técnica -->
+                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="4" data-preco="400,00" data-nome="Assistência técnica">
+                      <!-- Imagem do Produto -->
+                      <a href="#" class="shrink-0 md:order-1">
+                        <img class="h-20 w-20 ml-3 mr-3" src="./assets/imgs/carrinho-produto/assistencia.jpeg" alt="Assistência técnica" />
+                      </a>
+    
+                      <div class="flex items-center justify-between md:order-3 md:justify-end">
+                        <div class="flex items-center mt-5">
+                          <!-- Botão de definir a quantidade -->
+                          <div class="quantidade-container inline-flex items-center">
+                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                              </svg>
+                            </button>
+                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
+                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
+                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+    
+                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
+                          <!-- Preço do Produto -->
+                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 400,00</p>
+                        </div>
+                      </div>
+    
+                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
+                        <!-- Nome do produto -->
+                        <h2 class="text-[18px] font-bold text-black-900">Assistência técnica <span class="text-sm font-semibold text-gray-500">(24 meses)</span></h2>
+          
+                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
+                            <!-- Botão de Excluir e Comprar -->
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-red-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
+                              <span>Remover</span>
+                            </button>
+            
+                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-blue-500 text-xs sm:text-sm md:text-base font-semibold text-white hover:text-gray-900 mb-2 transition duration-300 transform hover:scale-105">
+                              <i class="bi bi-bag-check-fill mr-1 sm:mr-2"></i> 
+                              <span>Comprar</span>
+                            </button>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="w-[100%] mx-auto my-4">
+                    
+                    <h2 class="text-[20px] font-medium text-black-900 sm:text-2xl mt-6">Frete:</h2>
+                    
+                    <!-- Cálculo de Frete por CEP -->
+                    <div class="space-y-2 mt-4">
+                      <div class="flex gap-2">
+                        <div class="relative w-full max-w-xs">
+                          <input
+                            type="text"
+                            id="cep"
+                            placeholder="Digite seu CEP"
+                            class="cep w-full px-3 py-2 border border-blue-500 rounded-md text-sm pr-10"
+                            maxlength="9"
+                          >
+                          <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                            <svg class="mb-2" fill="#023e8a" width="25px" height="25px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#51bbfe"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2.84375 13C1.273438 13 0 14.277344 0 15.84375L0 42C0 43.566406 1.429688 45 3 45L7.09375 45C7.570313 47.835938 10.03125 50 13 50C15.96875 50 18.429688 47.835938 18.90625 45L28.15625 45C29.722656 45 31 43.722656 31 42.15625L31 15.90625C31 14.304688 29.738281 13 28.1875 13 Z M 33 20L33 45C33.480469 47.832031 36.03125 50 39 50C41.96875 50 44.429688 47.832031 44.90625 45L47 45C48.570313 45 50 43.570313 50 42L50 32.375C50 30.363281 48.550781 28.308594 48.375 28.0625L44.21875 22.5C43.265625 21.351563 41.769531 20 40 20 Z M 38 25L43.59375 25L46.78125 29.25C47.121094 29.730469 48 31.203125 48 32.375L48 33L38 33C37 33 36 32 36 31L36 27C36 25.894531 37 25 38 25 Z M 13 40C15.207031 40 17 41.792969 17 44C17 46.207031 15.207031 48 13 48C10.792969 48 9 46.207031 9 44C9 41.792969 10.792969 40 13 40 Z M 39 40C41.207031 40 43 41.792969 43 44C43 46.207031 41.207031 48 39 48C36.792969 48 35 46.207031 35 44C35 41.792969 36.792969 40 39 40Z"></path></g></svg>
+                          </div>
+                        </div>
+                        <button
+                          id="calcular-frete"
+                          class="px-3 py-2 bg-blue-200 text-black-900 rounded-md text-sm font-bold hover:bg-blue-300 disabled:opacity-50 transition duration-300 transition-transform duration-300 transform hover:scale-105"
+                        >
+                          Calcular
+                        </button>
+                      </div>
+                      <div class="text-xs text-gray-500 mt-5">
+                        <a
+                          href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-blue-600 hover:underline font-semibold text-[14px]"
+                        >
+                          Não sei meu CEP
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <!-- Opções de frete (inicialmente ocultas) -->
+                    <div id="opcoes-frete" class="space-y-2 mt-4 hidden">
+                      <div class="ml-4 space-y-2">
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center gap-2">
+                            <input type="radio" id="standard" name="shipping" checked class="accent-green-500">
+                            <label for="standard" class="text-gray-700">
+                              Padrão (<span id="prazo-padrao">3-5 dias úteis</span>)
+                            </label>
+                          </div>
+                          <span class="text-gray-700">R$ <span id="valor-frete-padrao">R$ 15,00</span></span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                          <div class="flex items-center gap-2">
+                            <input type="radio" id="express" name="shipping" class="accent-green-500">
+                            <label for="express" class="text-gray-700">
+                              Expresso (1-2 dias úteis)
+                            </label>
+                          </div>
+                          <span class="text-gray-700">R$ <span id="valor-frete-expresso">R$ 25,00</span></span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -96,45 +371,268 @@
               </div>
             </div>
           </div>
-          <!-- Fim do carrinho de compras -->
-      
-          <!-- Resumo de Compra  -->
-          <div class="resumo_compra w-full lg:w-1/3 top-0">
-            <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
-              <p class="text-[20px] font-semibold text-black-700 text-center">Resumo da Compra</p>
-              <hr>
-        
-              <div class="space-y-4">
-                <div class="space-y-2">
-                  <dl class="flex items-center justify-between gap-4 mt-15">
-                    <dt class="text-[14px] font-bold text-black-500">Produto:</dt>
-                  </dl>
-        
-                  <dl class="flex items-center justify-between gap-4">
-                    <dt class="text-[14px] font-bold text-black-500">Seguros e  assistências:</dt>
-                  </dl>
-        
-                  <dl class="flex items-center justify-between gap-4">
-                    <dt class="text-[14px] font-bold text-black-500">Fretes:</dt>
-                  </dl>
-        
-                <dl class="flex items-center justify-between gap-4 mt-30">
-                  <dt class="text-[16px] font-bold text-black-900">Total:</dt>
-                  <dd class="text-[16px] font-bold text-black-900">R$ 10.770,98 </dd>
-                </dl>
-              </div>
-        
-              <div class="flex items-center justify-center gap-2 mt-20">
-                <button type="submit" class="w-full py-3 px-4 font-medium rounded-md text-white bg-[#25D366] hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center">
-                  <a href="https://wa.me/+5514997837479" class="font-semibold"><i class="bi bi-whatsapp"></i>Direcionar para o WhatsApp</a>
-             </button>
+        </div>
+      </div>
+          <!-- Fim do carrinho de produtos -->
+
+        <!-- Resumo de compra -->
+          <div class="resumo_compra w-full lg:w-1/3 px-4 sm:px-6 mx-auto max-w-md lg:max-w-none lg:mx-0 top-0">
+          <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+          <p class="text-[20px] font-bold text-black-700 text-center">Resumo da Compra</p>
+
+          <hr class="w-[100%] mx-auto my-4">
+    
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <dl class="flex items-center justify-between gap-4 mt-10">
+                <dt class="text-[16px] font-bold text-black-500">Produtos:</dt>
+              </dl>
+    
+              <!-- Produtos detalhados - Será preenchido via JavaScript -->
+              <div id="resumo-produtos" class="ml-4 space-y-2">
+                <!-- Produtos serão inseridos aqui via JavaScript -->
               </div>
             </div>
-         </div>
-        
-          </div>
-        </section>
+    
+            <div class="space-y-2 mb-5">
+              <dl class="flex items-center justify-between gap-4">
+                <dt class="text-[16px] font-bold text-black-500">Seguros e assistências:</dt>
+              </dl>
+    
+              <!-- Detalhamento de seguros - Será preenchido via JavaScript -->
+              <div id="resumo-seguros" class="ml-4 space-y-2">
+                <!-- Seguros serão inseridos aqui via JavaScript -->
+              </div>
+            </div>
+    
+            <div class="space-y-2 mb-5">
+              <dl class="flex items-center justify-between gap-4">
+                <dt class="text-[16px] font-bold text-black-500">Fretes:</dt>
+              </dl>
+    
+              <!-- Opções de frete - Será preenchido via JavaScript -->
+              <div id="resumo-frete" class="ml-4 space-y-2 mb-10">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-700"></span>
+                  <span class="text-gray-700">R$ <span id="resumo-valor-frete"></span></span>
+                </div>
+              </div>
+            </div>
+    
+            <hr class="w-[100%] mx-auto my-4">
+    
+            <!-- Subtotal -->
+            <div class="flex items-center justify-between gap-4 mb-5 mt-10">
+              <dt class="text-[16px] text-black-600">Subtotal:</dt>
+              <dd class="text-[16px] font-bold text-black-700">R$ <span id="resumo-subtotal"></span></dd>
+            </div>
+    
+            <!-- Frete selecionado -->
+            <div class="flex items-center justify-between gap-4 mb-10">
+              <dt class="text-[16px] text-black-600">Frete:</dt>
+              <dd class="text-[16px] font-bold text-black-700">R$ <span id="resumo-frete-valor"></span></dd>
+            </div>
+    
+            <hr class="w-[100%] mx-auto my-4">
 
+            <!-- Total -->
+            <dl class="flex items-center justify-between gap-4 mt-10">
+              <dt class="text-[20px] font-bold text-black-900">Total:</dt>
+              <dd class="text-[24px] font-bold text-black-900">R$ <span id="resumo-total"></span></dd>
+            </dl>
+    
+          <!-- Botão WhatsApp -->
+          <div class="flex items-center justify-center gap-2 mt-20 mb-5">
+                <a href="https://wa.me/+5514997837479" class="font-bold">
+                <button type="submit" class="w-full py-3 px-4 font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center transition-transform duration-300 transform hover:scale-105">
+                  <i class="bi bi-whatsapp h-6 w-6 mr-5"></i>
+                  Direcionar para o WhatsApp
+                </button> 
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Fim de resumo de compra -->
+
+    <!--  Recomendações -->
+      <div class="recomendacoes flex items-center justify-center mt-6 lg:mt-8 print:flex print:justify-center print:items-center ml-10 mr-10">
+        <div class="xl:mt-8 sm:block md:block lg:block xl:block">
+          <h3 class="text-[32px] font-bold text-black-900 text-center mb-20">Recomendações para você</h3>
+
+          <!-- Cards de produtos -->
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Produto Recomendado 1 -->
+          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <div class="p-4 flex flex-col items-center">
+
+            <a href="#" class="overflow-hidden rounded">
+            <!-- Imagem do Produto -->
+            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto1.png" alt="Produto 1" />
+            </a>
+
+            <!-- Nome do Produto -->
+            <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Saco De Bater 1,20 Cm Profissional +2 Luva Bate Saco</h3>
+
+            <!-- Descrição do produto -->
+            <p class="mt-2 text-[14px] font-bold text-black-600 text-center mb-1">Ideal para boxe, muay thai e outras artes marciais!</p>
+                  
+            <!-- Preço do produto -->
+            <p class="preco text-lg font-bold text-black mt-5 mb-5">R$ 136,00</p>
+
+            <div class="botoes_recomendacoes flex gap-2 w-full">
+              <a href="favoritos.html">
+                <button class="btn_fav w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors transition-transform duration-300 transform hover:scale-105">
+                <svg class="h-6 w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z" />
+                </svg>
+              </button> 
+              </a>
+             
+              <a href="carrinho.html">
+                <button class="add-cart flex-1 py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors transition-colors transition-transform duration-300 transform hover:scale-105">
+                <i class="bi bi-cart-plus-fill"></i>
+                <span class="text-white ml-4 mr-4 text-[14px] font-bold">Add to cart</span>
+              </button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Produto Recomendado 2 -->
+          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <div class="p-4 flex flex-col items-center">
+
+            <a href="#" class="overflow-hidden rounded">
+            <!-- Imagem do Produto -->
+            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto2.jpg" alt="Produto 2" />
+            </a>
+
+            <!-- Nome do Produto -->
+            <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Mesa Suporte Para Notebook</h3>
+
+            <!-- Descrição do produto -->
+            <p class="mt-2 text-[14px] font-bold text-black-600 text-center mb-1">Mesa portátil e ergonômica para notebook, proporcionando conforto duradouro.</p>
+                  
+            <!-- Preço do produto -->
+            <p class="preco text-lg font-bold text-black mt-5 mb-5">R$ 69,29</p>
+
+            <div class="botoes_recomendacoes flex gap-2 w-full">
+              <a href="favoritos.html">
+                <button class="btn_fav w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors transition-transform duration-300 transform hover:scale-105">
+                <svg class="h-6 w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z" />
+                </svg>
+              </button> 
+              </a>
+             
+              <a href="carrinho.html">
+                <button class="add-cart flex-1 py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors transition-colors transition-transform duration-300 transform hover:scale-105">
+                <i class="bi bi-cart-plus-fill"></i>
+                <span class="text-white ml-4 mr-4 text-[14px] font-bold">Add to cart</span>
+              </button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Produto Recomendado 3 -->
+          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <div class="p-4 flex flex-col items-center">
+
+            <a href="#" class="overflow-hidden rounded">
+            <!-- Imagem do Produto -->
+            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto3.jpg" alt="Produto 3" />
+            </a>
+
+            <!-- Nome do Produto -->
+            <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Fone de Ouvido Samsung Galaxy Buds Pro R190N</h3>
+
+            <!-- Descrição do produto -->
+            <p class="mt-2 text-[14px] font-bold text-black-600 text-center mb-1">Cancelamento de ruído, bateria de longa duração.</p>
+                  
+            <!-- Preço do produto -->
+            <p class="preco text-lg font-bold text-black mt-5 mb-5">R$ 199,90</p>
+
+            <div class="botoes_recomendacoes flex gap-2 w-full">
+              <a href="favoritos.html">
+                <button class="btn_fav w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors transition-transform duration-300 transform hover:scale-105">
+                <svg class="h-6 w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z" />
+                </svg>
+              </button> 
+              </a>
+             
+              <a href="carrinho.html">
+                <button class="add-cart flex-1 py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors transition-colors transition-transform duration-300 transform hover:scale-105">
+                <i class="bi bi-cart-plus-fill"></i>
+                <span class="text-white ml-4 mr-4 text-[14px] font-bold">Add to cart</span>
+              </button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Produto Recomendado 4 -->
+          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <div class="p-4 flex flex-col items-center">
+
+            <a href="#" class="overflow-hidden rounded">
+            <!-- Imagem do Produto -->
+            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto4.jpg" alt="Produto 4" />
+            </a>
+
+            <!-- Nome do Produto -->
+            <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Mouse Sem Fio Recarregável Wireles Optico Led Rgb Ergonômico</h3>
+
+            <!-- Descrição do produto -->
+            <p class="mt-2 text-[14px] font-bold text-black-600 text-center mb-1">Clique silencioso, design anatômico e bateria recarregável via cabo USB.</p>
+                  
+            <!-- Preço do produto -->
+            <p class="preco text-lg font-bold text-black mt-5 mb-5">R$29,90</p>
+
+            <div class="botoes_recomendacoes flex gap-2 w-full">
+              <a href="favoritos.html">
+                <button class="btn_fav w-12 h-12 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors transition-transform duration-300 transform hover:scale-105">
+                <svg class="h-6 w-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z" />
+                </svg>
+              </button> 
+              </a>
+             
+              <a href="carrinho.html">
+                <button class="add-cart flex-1 py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors transition-colors transition-transform duration-300 transform hover:scale-105">
+                <i class="bi bi-cart-plus-fill"></i>
+                <span class="text-white ml-4 mr-4 text-[14px] font-bold">Add to cart</span>
+              </button>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Botão Ver Mais -->
+      <div class="flex justify-center mt-8">
+        <button onclick="window.location.href='./produtos.html'" class="btn_ver bg-blue-600 hover:text-[#edf2f4] text-[20px] text-[#fff] font-bold py-2 px-6 rounded-md transition duration-300 transition-transform duration-300 transform hover:scale-105">
+        <span><i class="bi bi-plus-circle mr-5 h-6 w-6"></i>Ver mais</span>
+        </button>
+      </div>
+    </div>
+        
+      </div>
+    </div>
+  </div>
+    <!-- Fim de recomendações -->
+
+        </div>
+      </section>
     </main>
 
     
