@@ -49,7 +49,7 @@ function criarNavbar() {
                       <span>Contato</span>
                   </a>
               </div>
-              <a href="" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
+              <a href="registerAdm.html" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
                   Área do administrador
               </a>
           </div>
@@ -115,7 +115,7 @@ function criarRodape() {
             </a>
         </div>
 
-        <div class="mt-100 h-9 bg-gradient-to-r from-gray-900 to-blue-900 shadow-lg border-t-3 border-gray-200 text-sm lg:text-base lg:h-11 text-gray-300 font-semibold">
+        <div class="mt-70 h-9 bg-gradient-to-r from-gray-900 to-blue-900 shadow-lg border-t-3 border-gray-200 text-sm lg:text-base lg:h-11 text-gray-300 font-semibold relative">
             <a href="#" id="voltar" class="flex gap-3 p-2 lg:p-2 justify-center">
                 <p>Voltar para o inicio</p>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 mt-0.5 lg:mt-1 ">
@@ -232,4 +232,18 @@ function scrollRight(carouselId) {
     `;
   }
   
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const carouselProdutos = document.getElementById('carouselProdutos');
+    if (carouselProdutos) {
+      carouselProdutos.innerHTML = produtosCards.slice(0, limite_produtos).map(criarCard).join('');
+    }
+  });
   
+  //   if (carousel && Array.isArray(produtosCards)) {
+  //     produtosCards.forEach(produto => {
+  //       const cardHTML = criarCard(produto);
+  //       carousel.insertAdjacentHTML('beforeend', cardHTML);
+  //     });
+  //   }
+  // });
