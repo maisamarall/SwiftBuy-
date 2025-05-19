@@ -107,7 +107,7 @@
          </div>
 
          <div class="grid grid-cols-2 xl:grid-cols-3 xl:justify-items-center sm:px-5 md:px-20 lg:px-50 xl:px-20 2xl:px-50 xl:py-2 xl:mt-15 ml-4 mt-8 text-[12px] sm:text-[16px] xl:text-[20px]">
-             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 transition hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 transition delay-150 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110" id="editar-informacao">
+             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="editar-informacao">
                  <i class="bi bi-pencil-square mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i> 
                  <h1  class=" font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Editar Informações</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-1 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -116,7 +116,7 @@
 
              </div>
      
-             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 transition hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 transition delay-150 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110" id="cadastrar-produtos">
+             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="cadastrar-produtos">
                  <i class="bi bi-plus-lg mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i>
                  <h1  class="font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Cadastrar Produto</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-1 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -131,7 +131,7 @@
                  </svg>
              </div> -->
      
-             <div class="flex bg-[#F9FAFB] mt-5 sm:mt-5 sm:mt-5 lg:mt-7 lg:mt-7 xl:mt-0 xl:mt-0 w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 transition hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 transition delay-150 duration-150 ease-in-out hover:-translate-y-1 hover:scale-110" id="adicionar-bunner">
+             <div class="flex bg-[#F9FAFB] mt-5 sm:mt-5 sm:mt-5 lg:mt-7 lg:mt-7 xl:mt-0 xl:mt-0 w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="adicionar-bunner">
                  <i class="bi bi-bag-check-fill mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i>
                  <h1  class="font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Total de Vendas</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-3 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -200,30 +200,25 @@
                 <div class="grid mt-4">
                     <label for="Imagem" class="mb-4 ">Imagens</label>
                     <div class="grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5 gap-4">
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md focus:outline-none active:border-gray-500 mt-3 overflow-hidden" >
+                        <label class="relative border border-gray-300 h-20 w-20 rounded-md focus:outline-none active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400" >
                             <img id="preview0" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-3 text-sm text-gray-500 pointer-events-none">Escolher</span>
+                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
                             <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview0', this)">
                         </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden">
+                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
                             <img id="preview1" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-3 text-sm text-gray-500 pointer-events-none">Escolher</span>
+                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
                             <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview1', this)">
                         </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden">
+                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
                             <img id="preview2" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-3 text-sm text-gray-500 pointer-events-none">Escolher</span>
+                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
                             <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview2', this)">
                         </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden">
+                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
                            <img id="preview3" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-3 text-sm text-gray-500 pointer-events-none">Escolher</span>
+                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload hover:bg-blue-100"></i></span>
                             <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview3', this)">
-                        </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden">
-                            <img id="preview4" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-3 text-sm text-gray-500 pointer-events-none">Escolher</span>
-                            <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview4', this)">
                         </label>
                     </div>
 

@@ -87,13 +87,13 @@ function criarNavbar() {
       <main>
           <div class="w-full flex items-center justify-center text-gray-100 font-semibold text-sm lg:text-base gap-7 pt-2 pb-2 justify-center bg-gradient-to-r from-slate-800 to-slate-900 shadow-md">
               <a href="acessados.html">
-                  <p class="hover:underline inline-block">Mais acessados</p>
+                  <p class="hover:border-b-2 hover:border-full inline-block">Mais acessados</p>
               </a>
               <a href="lancamentos.html">
-                  <p class="hover:underline inline-block">Lançamentos</p>
+                  <p class="hover:border-b-2 hover:border-full inline-block">Lançamentos</p>
               </a>
               <a href="promocoes.html">
-                  <p class="hover:underline inline-block">Promoções</p>
+                  <p class="hover:border-b-2 hover:border-full inline-block">Promoções</p>
               </a>
           </div>
       </nav>
@@ -130,28 +130,28 @@ function criarRodape() {
            
             <div class="flex flex-col">
                 <a href="">
-                    <p class="font-bold hover:text-gray-200 hover:underline inline-block">Suporte</p>
+                    <p class="font-bold hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Suporte</p>
                 </a>
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Entre em contato</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Entre em contato</p>
                 </a>
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Perguntas Frequentes (FAQ)</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Perguntas Frequentes (FAQ)</p>
                 </a>
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Termos e Condições</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Termos e Condições</p>
                 </a>
             </div>
 
             <div class="flex flex-col">
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Trabalhe conosco</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Trabalhe conosco</p>
                 </a>
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Acessibilidade</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Acessibilidade</p>
                 </a>
                 <a href="">
-                    <p class="hover:text-gray-200 hover:underline inline-block">Política de Privacidade</p>
+                    <p class="hover:text-gray-200 hover:border-b-2 hover:border-full inline-block">Política de Privacidade</p>
                 </a>
             </div>
         </div>
