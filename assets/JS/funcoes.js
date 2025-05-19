@@ -49,14 +49,14 @@ function criarNavbar() {
                       <span>Contato</span>
                   </a>
               </div>
-              <a href="#" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
+              <a href="" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
                   Área do administrador
               </a>
           </div>
           
           <div class="hidden md:flex items-center gap-4 md:ml-20 md:text-[19px] lg:text-[23px] text-gray-300 text-lg mt-2 sm:mt-0">
               <ul class="flex flex-row items-center justify-center gap-4 h-14">
-                  <a href="#" class="text-sm font-semibold text-white hover:text-blue-700">
+                  <a href="registerAdm.html" class="text-sm font-semibold text-white hover:text-blue-700">
                       Área do administrador
                   </a>
                   <li>
