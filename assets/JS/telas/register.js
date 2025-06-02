@@ -7,6 +7,7 @@ document.getElementById('usuario-form').addEventListener('submit', async (event)
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     const telefone = document.getElementById('telefone').value;
+    const cpf = document.getElementById('cpf').value;
     const senha = document.getElementById('senha').value;
 
     const formData = new FormData();
@@ -14,6 +15,7 @@ document.getElementById('usuario-form').addEventListener('submit', async (event)
     formData.append('nome', nome);
     formData.append('email', email);
     formData.append('telefone', telefone);
+    formData.append('cpf', cpf);
     formData.append('senha', senha);
 
     try {
