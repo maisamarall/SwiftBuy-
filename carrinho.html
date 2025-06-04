@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,618 +12,429 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-gray-100 overflow-x-hidden">
     <script>
-      window.onload = function() {
-        criarNavbar();
-      };
+        window.onload = function () {
+            criarNavbar(); 
+        };
     </script>
 
-    <main>
-      <section class="py-8 antialiased md:py-16">
-        <div class="flex flex-col lg:flex-row gap-6">
-          <!-- Carrinho de Produtos -->
-      <div class="w-full lg:w-2/3 px-4 sm:px-6">
-        <div class="container-cart">
-          <div class="mx-auto max-w-md lg:max-w-none lg:mx-0">
-    
-            <div class="mt-6 sm:mt-8 md:gap-6">
-              <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
-    
-                <div class="space-y-6">
-                  <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
-    
-                    <h2 class="flex items-center gap-2 text-[20px] font-bold text-black-900"> 
-                      <input type="checkbox" id="toggle1" class="peer hidden" />
-                    <i class="bi bi-basket2-fill text-gray-800"></i>
-                    <span>Produtos da SwiftBuy</span>  
+    <main class="py-8 antialiased md:py-16">
+        <div class="flex flex-col lg:flex-row gap-6 container mx-auto px-4 sm:px-6">
+            <div class="w-full lg:w-2/3">
+                <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
+                    <h2 class="flex items-center gap-2 text-[20px] font-bold text-gray-900">
+                        <i class="bi bi-basket2-fill text-gray-800"></i>
+                        <span>Produtos da SwiftBuy</span>
                     </h2>
-                    <hr class="w-[100%] mx-auto my-4">
-    
-                    <!-- Produto 1: -->
-                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="1" data-preco="2.499,00" data-nome="Notebook Samsung galaxy Book4">
-                      <!-- Imagem do Produto -->
-                      <a href="#" class="shrink-0 md:order-1">
-                        <img class="h-20 w-20 md:h-30 md:w-35 ml-3 mr-3" src="assets/imgs/notebook-laptop.avif" alt="Produto 1" />
-                      </a>
-    
-                      <div class="flex items-center justify-between md:order-3 md:justify-end">
-                        <div class="flex items-center mt-5">
-                          <!-- Botão de definir a quantidade -->
-                          <div class="quantidade-container inline-flex items-center">
-                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
-                              </svg>
-                            </button>
-                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
-                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-    
-                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
-                          <!-- Preço do Produto -->
-                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$   5.099,00</p>
-                        </div>
-                      </div>
-    
-                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                        <!-- Nome do produto -->
-                        <h2 class="text-[18px] font-bold text-black-900 mb-10">Notebook Dell Gamer G15</h2>
-          
-                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
-                            <!-- Botão de Excluir e Comprar -->
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-red-500 hover:bg-red-50 hover:border-red-500 active:opacity-80 mb-2 ">
-                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
-                              <span>Remover</span>
-                            </button>
-            
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-green-500 hover:bg-green-50 hover:border-green-500 active:opacity-80  mb-2"> 
-                              <i class="bi bi-whatsapp mr-1 sm:mr-2"></i>
-                              <span>Comprar pelo WhatsApp</span>
-                            </button>
-                          </div>
-                      </div>
-                    </div>
-                    <hr class="w-[100%] mx-auto my-4">
-                    
-                    <!-- Produto 2: -->
-                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="2" data-preco="8.159,98" data-nome="Samsung Galaxy S25 Ultra 5G">
-                      <!-- Imagem do Produto -->
-                      <a href="#" class="shrink-0 md:order-1">
-                        <img class="h-20 w-20 md:h-30 md:w-35 ml-3 mr-3" src="./assets/imgs/carrinho-produto/produto_2.jpg" alt="Produto 2" />
-                      </a>
-    
-                      <div class="flex items-center justify-between md:order-3 md:justify-end">
-                        <div class="flex items-center mt-5">
-                          <!-- Botão de definir a quantidade -->
-                          <div class="quantidade-container inline-flex items-center">
-                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
-                              </svg>
-                            </button>
-                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
-                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-    
-                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
-                          <!-- Preço do Produto -->
-                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 8.159,98</p>
-                        </div>
-                      </div>
-    
-                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                        <!-- Nome do produto -->
-                        <h2 class="text-[18px] font-bold text-black-900">Samsung Galaxy S25 Ultra 5G</h2>
-          
-                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
-                            <!-- Botão de Excluir e Comprar -->
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-red-500 hover:bg-red-50 hover:border-red-500 active:opacity-80 mb-2 ">
-                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
-                              <span>Remover</span>
-                            </button>
-            
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-green-500 hover:bg-green-50 hover:border-green-500 active:opacity-80  mb-2"> 
-                              <i class="bi bi-whatsapp mr-1 sm:mr-2"></i>
-                              <span>Comprar pelo WhatsApp</span>
-                            </button>
-                          </div>
-                      </div>
-                    </div>
-                    <hr class="w-[100%] mx-auto my-4">
+                    <hr class="w-full my-4">
 
-                    <!-- Produto 3: -->
-                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="2" data-preco="110,00" data-nome="Capa Protetora Premium Roxa">
-                      <!-- Imagem do Produto -->
-                      <a href="#" class="shrink-0 md:order-1">
-                        <img class="h-20 w-20 md:h-30 md:w-35 ml-3 mr-3" src="./assets/imgs/carrinho-produto/produto_3.jpg" alt="Produto 3" />
-                      </a>
-    
-                      <div class="flex items-center justify-between md:order-3 md:justify-end">
-                        <div class="flex items-center mt-5">
-                          <!-- Botão de definir a quantidade -->
-                          <div class="quantidade-container inline-flex items-center">
-                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
-                              </svg>
-                            </button>
-                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
-                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                              </svg>
-                            </button>
-                          </div>
+                    <div id="carrinho-itens" class="space-y-6">
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
+                            data-id="1" data-preco="5099.00" data-nome="Notebook Dell Gamer G15">
+                            <a href="teladetalhe" class="shrink-0">
+                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md" src="assets/imgs/notebook-laptop.avif"
+                                    alt="Notebook Dell Gamer G15" />
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-gray-900">Notebook Dell Gamer G15</h3>
+                                <div class="flex items-center mt-2">
+                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
+                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text"
+                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
+                                            value="1" readonly />
+                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
+                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 5.099,00</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
+                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 5.099,00</p>
+                                <button type="button"
+                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
+                                    <i class="bi bi-trash3-fill mr-1"></i>
+                                    <span>Remover</span>
+                                </button>
+                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar o Notebook Dell Gamer G15."
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
+                                    <i class="bi bi-whatsapp mr-1"></i>
+                                    <span>Comprar</span>
+                                </a>
+                            </div>
                         </div>
-    
-                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
-                          <!-- Preço do Produto -->
-                          <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 110,00</p>
-                        </div>
-                      </div>
-    
-                      <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                        <!-- Nome do produto -->
-                        <h2 class="text-[18px] font-bold text-black-900">Capa Protetora Premium Roxa</h2>
-          
-                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
-                            <!-- Botão de Excluir e Comprar -->
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-red-500 hover:bg-red-50 hover:border-red-500 active:opacity-80 mb-2 ">
-                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
-                              <span>Remover</span>
-                            </button>
-            
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-green-500 hover:bg-green-50 hover:border-green-500 active:opacity-80  mb-2"> 
-                              <i class="bi bi-whatsapp mr-1 sm:mr-2"></i>
-                              <span>Comprar pelo WhatsApp</span>
-                            </button>
-                          </div>
-                      </div>
-                    </div>
-                    <hr class="w-[100%] mx-auto my-4">
 
-                    <!-- Seção de Seguros e Assistências -->
-                    <h2 class="flex items-center gap-2 text-[20px] font-bold text-black-900 mt-20"> 
-                      <input type="checkbox" id="toggle2" class="peer hidden" /> 
-                      
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793z"/>
-                      </svg>
-                      <span>Seguros e Assistências</span> 
-                    </h2>
-                    <hr class="w-[100%] mx-auto my-4">
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
+                            data-id="2" data-preco="8159.98" data-nome="Samsung Galaxy S25 Ultra 5G">
+                            <a href="#" class="shrink-0">
+                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md"
+                                    src="./assets/imgs/carrinho-produto/produto_2.jpg" alt="Samsung Galaxy S25 Ultra 5G" />
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-gray-900">Samsung Galaxy S25 Ultra 5G</h3>
+                                <div class="flex items-center mt-2">
+                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
+                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text"
+                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
+                                            value="1" readonly />
+                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
+                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 8.159,98</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
+                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 8.159,98</p>
+                                <button type="button"
+                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
+                                    <i class="bi bi-trash3-fill mr-1"></i>
+                                    <span>Remover</span>
+                                </button>
+                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar o Samsung Galaxy S25 Ultra 5G."
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
+                                    <i class="bi bi-whatsapp mr-1"></i>
+                                    <span>Comprar</span>
+                                </a>
+                            </div>
+                        </div>
 
-                    <!-- Seguro contra quebra -->
-                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="3" data-preco="500,00" data-nome="Seguro contra quebra">
-                      <!-- Imagem do Produto -->
-                      <a href="#" class="shrink-0 md:order-1">
-                        <img class="h-20 w-20 md:h-30 md:w-30 rounded-md ml-3 mr-3" src="./assets/imgs/carrinho-produto/seguro.jpeg" alt="Seguro contra quebra" />
-                      </a>
-    
-                      <div class="flex items-center justify-between md:order-3 md:justify-end">
-                        <div class="flex items-center mt-5">
-                          <!-- Botão de definir a quantidade -->
-                          <!-- <div class="quantidade-container inline-flex items-center">
-                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
-                              </svg>
-                            </button>
-                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
-                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                              </svg>
-                            </button>
-                          </div> -->
+                        <div
+                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
+                            data-id="3" data-preco="110.00" data-nome="Capa Protetora Premium Roxa">
+                            <a href="#" class="shrink-0">
+                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md"
+                                    src="./assets/imgs/carrinho-produto/produto_3.jpg" alt="Capa Protetora Premium Roxa" />
+                            </a>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-gray-900">Capa Protetora Premium Roxa</h3>
+                                <div class="flex items-center mt-2">
+                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
+                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text"
+                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
+                                            value="1" readonly />
+                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
+                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 110,00</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
+                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 110,00</p>
+                                <button type="button"
+                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
+                                    <i class="bi bi-trash3-fill mr-1"></i>
+                                    <span>Remover</span>
+                                </button>
+                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar a Capa Protetora Premium Roxa."
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
+                                    <i class="bi bi-whatsapp mr-1"></i>
+                                    <span>Comprar</span>
+                                </a>
+                            </div>
                         </div>
-    
-                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
-                          <!-- Preço do Produto -->
-                          <!-- <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 500,00</p> -->
-                        </div>
-                      </div>
-    
-                      <div class="w-full min-w-0 flex md:order-2">
-                        <!-- Nome do produto -->
-                        <h2 class="text-[18px] font-bold text-black-900">Seguro contra quebra <span class="text-sm font-semibold text-gray-500">(12 meses)</span></h2>
-          
-                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
-                            <!-- Botão de Excluir e Comprar -->
-                            <!-- <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-red-500 hover:bg-red-50 hover:border-red-500 active:opacity-80 mb-2 ">
-                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
-                              <span>Remover</span>
-                            </button>
-            
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-green-500 hover:bg-green-50 hover:border-green-500 active:opacity-80  mb-2"> 
-                              <i class="bi bi-whatsapp mr-1 sm:mr-2"></i>
-                              <span>Comprar pelo WhatsApp</span>
-                            </button> -->
-                          </div>
-                      </div>
                     </div>
-                    <hr class="w-[100%] mx-auto my-4">
 
-                    <!-- Assistência técnica -->
-                    <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0 produto-item" data-id="4" data-preco="400,00" data-nome="Assistência técnica">
-                      <!-- Imagem do Produto -->
-                      <a href="#" class="shrink-0 md:order-1">
-                        <img class="h-20 w-20 md:h-30 md:w-30 rounded-md ml-3 mr-3" src="./assets/imgs/carrinho-produto/assistencia.jpeg" alt="Assistência técnica" />
-                      </a>
-    
-                      <div class="flex items-center justify-between md:order-3 md:justify-end">
-                        <div class="flex items-center mt-5">
-                          <!-- Botão de definir a quantidade -->
-                          <!-- <div class="quantidade-container inline-flex items-center">
-                            <button type="button" class="decrement-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="w-5 text-gray-900 hover:text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
-                              </svg>
-                            </button>
-                            <input type="text" class="quantidade-input w-10 shrink-0 border-0 bg-transparent text-center text-[16px] font-semibold text-black-500 focus:outline-none focus:ring-0" value="1" readonly />
-                            <button type="button" class="increment-btn inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                              <svg class="h-5 w-4 text-blue-500 hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                              </svg>
-                            </button>
-                          </div> -->
-                        </div>
-    
-                        <div class="text-end md:order-4 md:w-32 mt-11 mr-10">
-                          <!-- Preço do Produto -->
-                          <!-- <p class="text-[20px] font-semibold text-black-900 preco-item">R$ 400,00</p> -->
-                        </div>
-                      </div>
-    
-                      <div class="w-full min-w-0 flex md:order-2">
-                        <!-- Nome do produto -->
-                        <h2 class="text-[18px] font-bold text-black-900">Assistência técnica <span class="text-sm font-semibold text-gray-500">(24 meses)</span></h2>
-          
-                        <div class="botoes-compra flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mt-3 sm:mt-6 md:mt-30">
-                            <!-- Botão de Excluir e Comprar -->
-                            <!-- <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-red-500 hover:bg-red-50 hover:border-red-500 active:opacity-80 mb-2 ">
-                              <i class="bi bi-trash3-fill mr-1 sm:mr-2"></i>  
-                              <span>Remover</span>
-                            </button>
-            
-                            <button type="button" class="remover-btn px-2 sm:px-3 py-1 sm:py-2 inline-flex items-center rounded-lg bg-white text-xs sm:text-sm md:text-sm font-semibold text-gray-600 border border-gray-600 hover:text-green-500 hover:bg-green-50 hover:border-green-500 active:opacity-80  mb-2"> 
-                              <i class="bi bi-whatsapp mr-1 sm:mr-2"></i>
-                              <span>Comprar pelo WhatsApp</span>
-                            </button> -->
-                          </div>
-                      </div>
-                    </div>
-                    <hr class="w-[100%] mx-auto my-4">
-                    
-                    <h2 class="text-[20px] font-medium text-black-900 sm:text-2xl mt-6">Frete:</h2>
-                    
-                    <!-- Cálculo de Frete por CEP -->
+                    <h2 class="text-xl font-bold text-gray-900 mt-8">Frete:</h2>
                     <div class="space-y-2 mt-4">
-                      <div class="flex gap-2">
-                        <div class="relative w-full max-w-xs">
-                          <input
-                            type="text"
-                            id="cep"
-                            placeholder="Digite seu CEP"
-                            class="cep w-full px-3 py-2 border border-gray-600 focus:focus:outline-none focus:border-gray-900 rounded-md text-sm pr-10"
-                            maxlength="9"
-                          >
-                          <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                            <i class="bi bi-truck text-gray-700"></i>
-                          </div>
+                        <div class="flex gap-2">
+                            <div class="relative w-full max-w-xs">
+                                <input type="text" id="cep" placeholder="Digite seu CEP"
+                                    class="w-full px-3 py-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 rounded-md text-sm pr-10"
+                                    maxlength="9">
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="bi bi-truck text-gray-400"></i>
+                                </div>
+                            </div>
+                            <button id="calcular-frete"
+                                class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                Calcular
+                            </button>
                         </div>
-                        <button
-                          id="calcular-frete"
-                          class="px-3 py-2 bg-gray-900 text-white rounded-full text-sm font-bold hover:opacity-90 active:opacity-60"
-                        >
-                          Calcular
-                        </button>
-                      </div>
-                      <div class="text-xs text-gray-500 mt-5">
-                        <a
-                          href="https://buscacepinter.correios.com.br/app/endereco/index.php"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-gray-500 hover:border-b-2 hover:border-gray-800 hover:border-full hover:text-gray-800 font-semibold text-[14px]"
-                        >
-                          Não sei meu CEP
-                        </a>
-                      </div>
+                        <div class="text-xs text-gray-500 mt-5">
+                            <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank"
+                                rel="noopener noreferrer" class="text-blue-600 hover:underline text-[14px]">
+                                Não sei meu CEP
+                            </a>
+                        </div>
                     </div>
-                    
-                    <!-- Opções de frete (inicialmente ocultas) -->
+
                     <div id="opcoes-frete" class="space-y-2 mt-4 hidden">
-                      <div class="ml-4 space-y-2">
-                        <div class="flex items-center justify-between text-sm">
-                          <div class="flex items-center gap-2">
-                            <input type="radio" id="standard" name="shipping" checked class="accent-green-500">
-                            <label for="standard" class="text-gray-700">
-                              Padrão (<span id="prazo-padrao">3-5 dias úteis</span>)
-                            </label>
-                          </div>
-                          <span class="text-gray-700">R$ <span id="valor-frete-padrao">R$ 15,00</span></span>
+                        <div class="ml-4 space-y-2">
+                            <div class="flex items-center justify-between text-sm">
+                                <div class="flex items-center gap-2">
+                                    <input type="radio" id="standard" name="shipping" value="15.00" class="accent-blue-600">
+                                    <label for="standard" class="text-gray-700">
+                                        Padrão (<span id="prazo-padrao">3-5 dias úteis</span>)
+                                    </label>
+                                </div>
+                                <span class="text-gray-700">R$ <span id="valor-frete-padrao">15,00</span></span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <div class="flex items-center gap-2">
+                                    <input type="radio" id="express" name="shipping" value="25.00" class="accent-blue-600">
+                                    <label for="express" class="text-gray-700">
+                                        Expresso (1-2 dias úteis)
+                                    </label>
+                                </div>
+                                <span class="text-gray-700">R$ <span id="valor-frete-expresso">25,00</span></span>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between text-sm">
-                          <div class="flex items-center gap-2">
-                            <input type="radio" id="express" name="shipping" class="accent-green-500">
-                            <label for="express" class="text-gray-700">
-                              Expresso (1-2 dias úteis)
-                            </label>
-                          </div>
-                          <span class="text-gray-700">R$ <span id="valor-frete-expresso">R$ 25,00</span></span>
-                        </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-          <!-- Fim do carrinho de produtos -->
 
-        <!-- Resumo de compra -->
-          <div class="resumo_compra w-full lg:w-1/3 px-4 sm:px-6 mx-auto max-w-md lg:max-w-none lg:mx-0 top-0">
-          <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
-          <p class="text-[20px] font-bold text-black-700 text-center">Resumo da Compra</p>
+            <div class="w-full lg:w-1/3 sticky top-6">
+                <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
+                    <p class="text-xl font-bold text-gray-900 text-center">Resumo da Compra</p>
+                    <hr class="w-full my-4">
 
-          <hr class="w-[100%] mx-auto my-4">
-    
-          <div class="space-y-4">
-            <div class="space-y-2">
-              <dl class="flex items-center justify-between gap-4 mt-10">
-                <dt class="text-[16px] font-bold text-black-500">Produtos:</dt>
-              </dl>
-    
-              <!-- Produtos detalhados - Será preenchido via JavaScript -->
-              <div id="resumo-produtos" class="ml-4 space-y-2">
-                <!-- Produtos serão inseridos aqui via JavaScript -->
-              </div>
-            </div>
-    
-            <div class="space-y-2 mb-5">
-              <dl class="flex items-center justify-between gap-4">
-                <dt class="text-[16px] font-bold text-black-500">Seguros e assistências:</dt>
-              </dl>
-    
-              <!-- Detalhamento de seguros - Será preenchido via JavaScript -->
-              <div id="resumo-seguros" class="ml-4 space-y-2">
-                <!-- Seguros serão inseridos aqui via JavaScript -->
-              </div>
-            </div>
-    
-            <div class="space-y-2 mb-5">
-              <dl class="flex items-center justify-between gap-4">
-                <dt class="text-[16px] font-bold text-black-500">Fretes:</dt>
-              </dl>
-    
-              <!-- Opções de frete - Será preenchido via JavaScript -->
-              <div id="resumo-frete" class="ml-4 space-y-2 mb-10">
-                <div class="flex justify-between text-sm">
-                  <span class="text-gray-700"></span>
-                  <span class="text-gray-700">R$ <span id="resumo-valor-frete"></span></span>
+                    <div class="space-y-4">
+                        <div class="space-y-2">
+                            <dl class="flex items-center justify-between gap-4">
+                                <dt class="text-base font-semibold text-gray-700">Produtos:</dt>
+                            </dl>
+                            <div id="resumo-produtos" class="ml-4 space-y-2">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <dl class="flex items-center justify-between gap-4">
+                                <dt class="text-base font-semibold text-gray-700">Frete:</dt>
+                            </dl>
+                            <div id="resumo-frete" class="ml-4 space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-gray-700" id="resumo-tipo-frete"></span>
+                                    <span class="text-gray-700">R$ <span id="resumo-valor-frete">0,00</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="w-full my-4">
+
+                        <dl class="flex items-center justify-between gap-4">
+                            <dt class="text-lg text-gray-800">Subtotal:</dt>
+                            <dd class="text-lg font-bold text-gray-900"> <span id="resumo-subtotal">0,00</span></dd>
+                        </dl>
+
+                        <dl class="flex items-center justify-between gap-4 mt-4">
+                            <dt class="text-xl font-bold text-gray-900">Total:</dt>
+                            <dd class="text-2xl font-bold text-blue-600"> <span id="resumo-total">0,00</span></dd>
+                        </dl>
+
+                        <div class="mt-8">
+                            <a id="whatsapp-link" href="#"
+                                class="w-full py-3 px-4 font-semibold rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center">
+                                <i class="bi bi-whatsapp h-6 w-6 mr-3"></i>
+                                Finalizar Pedido via WhatsApp
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-    
-            <hr class="w-[100%] mx-auto my-4">
-    
-            <!-- Subtotal -->
-            <div class="flex items-center justify-between gap-4 mb-5 mt-10">
-              <dt class="text-[16px] text-black-600">Subtotal:</dt>
-              <dd class="text-[16px] font-bold text-black-700">R$ <span id="resumo-subtotal"></span></dd>
-            </div>
-    
-            <!-- Frete selecionado -->
-            <div class="flex items-center justify-between gap-4 mb-10">
-              <dt class="text-[16px] text-black-600">Frete:</dt>
-              <dd class="text-[16px] font-bold text-black-700">R$ <span id="resumo-frete-valor"></span></dd>
-            </div>
-    
-            <hr class="w-[100%] mx-auto my-4">
-
-            <!-- Total -->
-            <dl class="flex items-center justify-between gap-4 mt-10">
-              <dt class="text-[20px] font-bold text-black-900">Total:</dt>
-              <dd class="text-[24px] font-bold text-black-900">R$ <span id="resumo-total"></span></dd>
-            </dl>
-    
-          <!-- Botão WhatsApp -->
-          <div class="flex items-center justify-center gap-2 mt-20 mb-5">
-                <a href="https://wa.me/+5514997837479" class="font-bold">
-                <button type="submit" class="w-full py-3 px-4 font-medium rounded-md text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center">
-                  <i class="bi bi-whatsapp h-6 w-6 mr-5"></i>
-                  Direcionar para o WhatsApp
-                </button> 
-              </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <!-- Fim de resumo de compra -->
-
-    <!--  Recomendações -->
-      <div class="recomendacoes flex items-center justify-center mt-6 lg:mt-8 print:flex print:justify-center print:items-center ml-10 mr-10">
-        <div class="xl:mt-8 sm:block md:block lg:block xl:block">
-          <h3 class="text-[32px] font-bold text-black-900 text-center mb-20">Recomendações para você</h3>
-
-          <!-- Cards de produtos -->
-           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          <!-- Produto Recomendado 1 -->
-              <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-              <div class="p-4 flex flex-col items-center">
-
-                <a href="#" class="overflow-hidden rounded">
-                <!-- Imagem do Produto -->
-                <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto1.png" alt="Produto 1" />
-                </a>
-
-                <!-- Nome do Produto -->
-                <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Saco De Bater</h3>
-
-                <!-- Descrição do produto -->
-                <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Ideal para boxe, muay thai e outras artes marciais...</p>
-                      
-                <!-- Preço do produto -->
-                <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 136,00</p>
-
-                <div class="flex gap-2 w-full items-center justify-center">
-                  <a href="favoritos.html">
-                    <button class="flex items-center justify-center">
-                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
-                  </button> 
-                  </a>
-                
-                  <a href="carrinho.html">
-                    <button class="flex-1 py-3 px-4">
-                    <i class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
-                  </button>
-                  </a>
-                </div>
-
-              </div>
-          </div>
-
-        <!-- Produto Recomendado 2 -->
-            <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-              <div class="p-4 flex flex-col items-center">
-
-                <a href="#" class="overflow-hidden rounded">
-                <!-- Imagem do Produto -->
-                <img class="mx-auto h-36 w-36 object-cover mb-10" src="assets/imgs/notebook-laptop.avif" alt="Produto 2" />
-                </a>
-
-                <!-- Nome do Produto -->
-                <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Notebook Dell Gamer G15</h3>
-
-                <!-- Descrição do produto -->
-                <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Equipado com processador Intel Core i7 de 12ª geração, 16GB de RAM e placa...</p>
-                      
-                <!-- Preço do produto -->
-                <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$  5.099,00</p>
-
-                <div class="flex gap-2 w-full items-center justify-center">
-                  <a href="favoritos.html">
-                    <button class="flex items-center justify-center">
-                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
-                  </button> 
-                  </a>
-                
-                  <a href="carrinho.html">
-                    <button class="flex-1 py-3 px-4">
-                    <i class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
-                  </button>
-                  </a>
-                </div>
-
-              </div>
-          </div>
-
-        <!-- Produto Recomendado 3 -->
-          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-            <div class="p-4 flex flex-col items-center">
-
-              <a href="#" class="overflow-hidden rounded">
-              <!-- Imagem do Produto -->
-              <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto3.jpg" alt="Produto 3" />
-              </a>
-
-              <!-- Nome do Produto -->
-              <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Fone de Ouvido Samsung</h3>
-
-              <!-- Descrição do produto -->
-              <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Cancelamento de ruído, bateria de longa duração.</p>
-                    
-              <!-- Preço do produto -->
-              <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 199,90</p>
-
-              <div class="flex gap-2 w-full items-center justify-center">
-                  <a href="favoritos.html">
-                    <button class="flex items-center justify-center">
-                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
-                  </button> 
-                  </a>
-                
-                  <a href="carrinho.html">
-                    <button class="flex-1 py-3 px-4">
-                    <i class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
-                  </button>
-                  </a>
-              </div>
             </div>
         </div>
-
-        <!-- Produto Recomendado 4 -->
-          <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-          <div class="p-4 flex flex-col items-center">
-
-            <a href="#" class="overflow-hidden rounded">
-            <!-- Imagem do Produto -->
-            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto4.jpg" alt="Produto 4" />
-            </a>
-
-            <!-- Nome do Produto -->
-            <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Mouse Sem Fio Recarregável</h3>
-
-            <!-- Descrição do produto -->
-            <p class="mt-2 text-[14px] font-bold font-text-gray-700 text-center mb-1">Clique silencioso, design anatômico e bateria recarregável via cabo USB.</p>
-                  
-            <!-- Preço do produto -->
-            <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$29,90</p>
-
-            <div class="flex gap-2 w-full items-center justify-center">
-                <a href="favoritos.html">
-                  <button class="flex items-center justify-center">
-                  <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
-                  </button> 
-                </a>
-                
-                <a href="carrinho.html">
-                  <button class="flex-1 py-3 px-4">
-                  <i class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
-                  </button>
-                </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      <!-- Botão Ver Mais -->
-      <div class="flex justify-center mt-8">
-        <button onclick="window.location.href='./produtos.html'" class="btn_ver bg-gray-900 hover:opacity-80 hover:text-gray-50 active:opacity-90 text-[15px] text-white font-bold py-2 px-6 rounded-lg">
-        <span><i class="bi bi-plus-circle mr-3 h-6 w-6"></i>Ver mais</span>
-        </button>
-      </div>
-    </div>
-        
-      </div>
-    </div>
-  </div>
-    <!-- Fim de recomendações -->
-
-        </div>
-      </section>
     </main>
 
-    
-  <div id="footer-container"></div>
-  
-  <script src="./assets/JS/funcoes.js"></script>
-  <script src="./assets/JS/script.js"></script>
+    <script src="./assets/JS/carrinho.js"></script>
+    <div
+        class="recomendacoes flex items-center justify-center mt-6 lg:mt-8 print:flex print:justify-center print:items-center ml-10 mr-10">
+        <div class="xl:mt-8 sm:block md:block lg:block xl:block">
+            <h3 class="text-[32px] font-bold text-black-900 text-center mb-20">Recomendações para você</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="p-4 flex flex-col items-center">
+
+                        <a href="#" class="overflow-hidden rounded">
+                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto1.png"
+                                alt="Produto 1" />
+                        </a>
+
+                        <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Saco De Bater</h3>
+
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Ideal para boxe, muay thai e outras
+                            artes marciais...</p>
+
+                        <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 136,00</p>
+
+                        <div class="flex gap-2 w-full items-center justify-center">
+                            <a href="favoritos.html">
+                                <button class="flex items-center justify-center">
+                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                </button>
+                            </a>
+
+                            <a href="carrinho.html">
+                                <button class="flex-1 py-3 px-4">
+                                    <i
+                                        class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="p-4 flex flex-col items-center">
+
+                        <a href="#" class="overflow-hidden rounded">
+                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="assets/imgs/notebook-laptop.avif"
+                                alt="Produto 2" />
+                        </a>
+
+                        <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Notebook Dell Gamer G15</h3>
+
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Equipado com processador Intel Core i7
+                            de 12ª geração, 16GB de RAM e placa...</p>
+
+                        <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 5.099,00</p>
+
+                        <div class="flex gap-2 w-full items-center justify-center">
+                            <a href="favoritos.html">
+                                <button class="flex items-center justify-center">
+                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                </button>
+                            </a>
+
+                            <a href="carrinho.html">
+                                <button class="flex-1 py-3 px-4">
+                                    <i
+                                        class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="p-4 flex flex-col items-center">
+
+                        <a href="#" class="overflow-hidden rounded">
+                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto3.jpg"
+                                alt="Produto 3" />
+                        </a>
+
+                        <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Fone de Ouvido Samsung</h3>
+
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Cancelamento de ruído, bateria de longa
+                            duração.</p>
+
+                        <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 199,90</p>
+
+                        <div class="flex gap-2 w-full items-center justify-center">
+                            <a href="favoritos.html">
+                                <button class="flex items-center justify-center">
+                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                </button>
+                            </a>
+
+                            <a href="carrinho.html">
+                                <button class="flex-1 py-3 px-4">
+                                    <i
+                                        class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card_produto bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="p-4 flex flex-col items-center">
+
+                        <a href="#" class="overflow-hidden rounded">
+                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto4.jpg"
+                                alt="Produto 4" />
+                        </a>
+
+                        <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Mouse Sem Fio Recarregável</h3>
+
+                        <p class="mt-2 text-[14px] font-bold font-text-gray-700 text-center mb-1">Clique silencioso, design
+                            anatômico e bateria recarregável via cabo USB.</p>
+
+                        <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$29,90</p>
+
+                        <div class="flex gap-2 w-full items-center justify-center">
+                            <a href="favoritos.html">
+                                <button class="flex items-center justify-center">
+                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                </button>
+                            </a>
+
+                            <a href="carrinho.html">
+                                <button class="flex-1 py-3 px-4">
+                                    <i
+                                        class="bi bi-cart-plus-fill md:text-[25px] text-gray-700 hover:text-blue-500 focus:text-blue-500"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex justify-center mt-8">
+                <button onclick="window.location.href='./produtos.html'"
+                    class="btn_ver bg-gray-900 hover:opacity-80 hover:text-gray-50 active:opacity-90 text-[15px] text-white font-bold py-2 px-6 rounded-lg">
+                    <span><i class="bi bi-plus-circle mr-3 h-6 w-6"></i>Ver mais</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </main>
+
+
+    <div id="footer-container"></div>
+
+    <script src="./assets/JS/funcoes.js"></script>
+    <script src="./assets/JS/script.js"></script>
 </body>
+
 </html>
