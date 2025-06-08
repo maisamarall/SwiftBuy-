@@ -25,79 +25,74 @@
     
             <!-- Para desktop -->
             <div class="sm:flex sm:gap-5 sm:absolute sm:z-50 sm:right-4 sm:mt-3 hidden lg:mt-4 lg:right-18 2xl:gap-10 2xl:mt-5">
-                <div class="flex sm:gap-4 2xl:gap-4">
-                    <img src="./assets/imgs/adm-img/perfil_sem_fotp.png" alt="Foto de perfil"  class="h-7 w-7 mt-1 rounded-full lg:h-9 lg:w-9 lg:mt-0">
-                    <p class="text-gray-100 text-[12px] mt-2 lg:text-[14px] lg:mt-2">
-                        Nome do vendedor
-                    </p>
-                </div>
-            
+                <p class="text-gray-100 text-[12px] mt-2 lg:text-[14px] lg:mt-2 titulo" id="nomeVendedorAdm">
+                    Nome do vendedor
+                </p>
                 <div>   
-                    <button class=" text-[10px] text-gray-100 border-1 border-blue-100 px-4 py-2 rounded-full hover:border-blue-400 hover:text-blue-400 lg:text-[12px] lg:px-3" id="acessar">
+                    <button onclick="preencherFormularioAdm(1)" type="button" class="titulo text-[10px] text-gray-100 border-1 border-blue-100 px-4 py-2 rounded-full hover:border-blue-400 hover:text-blue-400 lg:text-[12px] lg:px-3" id="acessar">
                         Informações do vendedor
                     </button>
                 </div>
             </div>
-        </div>
-    
-        <!-- Para desktop -->
-         <form action=""> 
-             <div class="hidden bg-[#F9FAFB] shadow-lg lg:text-[14px] lg:w-93 lg:pl-8 lg:pr-8 lg:pb-10 lg:pt-8 rounded-lg font-semibold text-gray-800 lg:mt-5 border border-gray-100 fixed z-50 lg:right-18 sm:right-5 sm:w-90 sm:text-[17px] sm:pl-8 sm:pr-8 sm:pb-9 sm:mt-6 sm:pt-9" id="exibir">
-     
-                 <h1 class="pb-3 border-b border-blue-700 text-[21px] titulo bg-gradient-to-r from-gray-900 to-blue-900 text-transparent bg-clip-text mb-6">
-                     Informações do vendedor
-                 </h1>
-     
-                 <p class="pb-2">Nome: </p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
-         
-                 <p class="mt-5 pb-2">Email:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
-                 
-                 <p class="mt-5 pb-2">Número do whatsapp:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500" type="number"></p>
-         
-                 <p class="mt-5 pb-2">CPF:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
-             </div>
-         </form>
-    
-        <!-- Para mobile -->
-        <div class="sm:hidden bg-gradient-to-r from-gray-900 to-blue-950  h-20 font-semibold shadow-sm  border-b border-gray-300">
-            <div class="flex pt-2.5 ml-8 flex gap-5">
-                <img src="./assets/imgs/adm-img/perfil_sem_fotp.png" alt="Foto de perfil"  class="h-13 w-13 mt-1 rounded-full border-gray-300">
-                <p class=" text-[12px] text-gray-100 mt-1">
-                    Nome do vendedor
-                </p>
-            </div>
-            
-            <div class="-mt-7 ml-3">
-                <button class="text-[10px] border-1 hover:border-blue-400 hover:text-blue-400 text-gray-100 border-gray-100 ml-23 px-2 py-1 rounded-full hover:border-blue-400 hover:text-blue-400" id="acessarInformacoes">
+
+            <!-- Para mobile -->
+        <div class="sm:hidden font-semibold shadow-sm mt-3 ml-30">
+            <div class="-mt-2">
+                <button type="button" class="text-[10px] border-1 hover:border-blue-400 hover:text-blue-400 text-gray-100 border-gray-100 ml-23 px-2 py-1 rounded-full hover:border-blue-400 hover:text-blue-400" id="acessarInformacoes">
                     Informações do vendedor
                 </button>
             </div>
         </div>
+        </div>
+    
+        <!-- Para desktop -->
+         <form id="adm-form" class="grid grid-cols-1 hidden bg-[#F9FAFB] shadow-lg lg:text-[14px] lg:w-93 lg:pl-8 lg:pr-8 lg:pb-10 lg:pt-8 rounded-lg font-semibold text-gray-800 lg:mt-5 border border-gray-100 fixed z-50 lg:right-18 sm:right-5 sm:w-90 sm:text-[17px] sm:pl-8 sm:pr-8 sm:pb-9 sm:mt-6 sm:pt-9"> 
+            
+            <h1 class="pb-3 border-b border-blue-700 text-[21px] titulo bg-gradient-to-r from-gray-900 to-blue-900 text-transparent bg-clip-text mb-6 font-bold">
+                Informações do vendedor
+            </h1>
+
+            <input type="hidden" id="idVisualizar" name="id">
+                 
+            <label for="nome" class="pb-2">Nome:</label>
+            <input type="text" id="nomeVisualizar" class="border-b border-gray-300 pb-2 text-gray-500 focus:outline-none" required>
+
+            <label for="email" class="mt-5 pb-2">Email:</label>
+            <input type="text" id="emailVisualizar" disabled name="email" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <label for="numero" class="mt-5 pb-2">Número do WhatsApp:</label>
+            <input type="number" id="numeroVisualizar" disabled name="numero" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <label for="cpf" class="mt-5 pb-2">CPF:</label>
+            <input type="text" id="cpfVisualizar" disabled name="cpf" class="border-b border-gray-300 pb-2 text-gray-500" required>
+            
+            <button type="button" id="delete" class="bg-gradient-to-r from-slate-800 to-blue-800 py-2 text-white rounded-lg mt-9 hover:opacity-90 active:opacity-70">Deletar conta</button>
+         </form>
+    
+        
     
         <!-- Para mobile -->
-         <form action="">
-             <div class="hidden bg-[#F9FAFB] absolute shadow-lg text-[11px] w-65 ml-13 pl-7 pr-7 pb-6 pt-6 rounded-lg font-semibold text-gray-800 mt-3 border border-gray-100" id="exibirInformacoes">
-     
-                 <h1 class="border-b border-blue-700 text-[14px] titulo bg-gradient-to-r from-gray-900 to-blue-900 text-transparent bg-clip-text mb-3 pb-1 ">
-                     Informações do vendedor
-                 </h1>
-     
-                 <p class="pb-2">Nome: </p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
-         
-                 <p class="mt-3 pb-2">Email:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
+         <form id="adm-mobile-form" class="grid grid-cols-1 hidden bg-[#F9FAFB] absolute shadow-lg text-[11px] w-65 ml-13 pl-7 pr-7 pb-6 pt-6 rounded-lg font-semibold text-gray-800 mt-3 border border-gray-100">
+
+            <h1 class="font-bold border-b border-blue-700 text-[14px] titulo bg-gradient-to-r from-gray-900 to-blue-900 text-transparent bg-clip-text mb-3 pb-1 ">
+                Informações do vendedor
+            </h1>
+
+            <input type="hidden" id="id" name="id">
                  
-                 <p class="mt-3 pb-2">Número do whatsapp:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500" type="number"></p>
-         
-                 <p class="mt-3 pb-2">CPF:</p>
-                 <p class="border-b border-gray-300 pb-2 text-gray-500"></p>
-             </div>
+            <label for="nome" class="pb-2">Nome:</label>
+            <input type="text" id="nome" disabled name="nome" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <label for="email" class="mt-3 pb-2">Email:</label>
+            <input type="text" id="email" disabled name="email" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <label for="numero" class="mt-3 pb-2">Número do WhatsApp:</label>
+            <input type="number" id="numero" disabled name="numero" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <label for="cpf" class="mt-3 pb-2">CPF:</label>
+            <input type="text" id="cpf" disabled name="cpf" class="border-b border-gray-300 pb-2 text-gray-500" required>
+
+            <button type="button" id="delete" class="bg-gradient-to-r from-slate-800 to-blue-800 py-2 text-white rounded-lg mt-9 hover:opacity-90 active:opacity-70">Deletar conta</button>
          </form>
     </header>
 
@@ -109,7 +104,7 @@
          </div>
 
          <div class="grid grid-cols-2 xl:grid-cols-3 xl:justify-items-center sm:px-5 md:px-20 lg:px-50 xl:px-20 2xl:px-50 xl:py-2 xl:mt-15 ml-4 mt-8 text-[12px] sm:text-[16px] xl:text-[20px]">
-             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="editar-informacao">
+             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 div-areas" id="editar-informacao">
                  <i class="bi bi-pencil-square mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i> 
                  <h1  class=" font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Editar Informações</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-1 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -118,7 +113,7 @@
 
              </div>
      
-             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="cadastrar-produtos">
+             <div class="flex bg-[#F9FAFB] w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 div-areas" id="cadastrar-produtos">
                  <i class="bi bi-plus-lg mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i>
                  <h1  class="font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Cadastrar Produto</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-1 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -133,7 +128,7 @@
                  </svg>
              </div> -->
      
-             <div class="flex bg-[#F9FAFB] mt-5 sm:mt-5 sm:mt-5 lg:mt-7 lg:mt-7 xl:mt-0 xl:mt-0 w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 " id="adicionar-bunner">
+             <div class="flex bg-[#F9FAFB] mt-5 sm:mt-5 sm:mt-5 lg:mt-7 lg:mt-7 xl:mt-0 xl:mt-0 w-40 h-17 sm:w-70 sm:h-23 xl:w-85 xl:h-30 border border-gray-300 text-blue-950 rounded-sm active:opacity-80 hover:bg-blue-950 hover:border-blue-400 hover:border-2 hover:text-blue-400 div-areas" id="adicionar-bunner">
                  <i class="bi bi-bag-check-fill mt-7 ml-3 sm:ml-9 sm:mt-9 xl:mt-12 text-blue-500"></i>
                  <h1  class="font-semibold pl-2 pt-7 sm:pl-8 sm:pt-9 xl:pt-12" >Total de Vendas</h1>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mt-7 ml-3 sm:size-5 sm:mt-9 sm:ml-6 xl:size-7 xl:mt-12 xl:ml-9 text-blue-950">
@@ -142,92 +137,67 @@
              </div>
          </div>
 
-         <div class="hidden absolute z-50 bg-[#F9FAFB] text-[12px] xl:text-[15px] w-75 xl:w-110 text-gray-800 shadow-lg top-30 ml-10 border border-gray-200 rounded-lg sm:ml-45 md:ml-63 lg:ml-95 xl:ml-125 2xl:ml-150 " id="form-editar">
+         <div class="hidden absolute z-50 bg-[#F9FAFB] text-[12px] xl:text-[15px] w-75 xl:w-110 shadow-lg top-30 ml-10 border border-gray-200 rounded-lg sm:ml-45 md:ml-63 lg:ml-95 xl:ml-125 2xl:ml-140 " id="form-editar">
 
-             <button id="remover" class="absolute"><i class="bi bi-x text-gray-100 text-[25px] ml-65 xl:ml-102 xl:text-[20] hover:text-blue-500"></i></button>
-             
-             <div class="h-24 bg-gradient-to-r from-gray-900 to-blue-900 rounded-md">
-                 <h1 class="lg:text-[18px] text-[16px] text-gray-100 pt-10 lg:pt-10 ml-9 lg:ml-9 xl:ml-23 titulo">
+             <div class="h-24 bg-gradient-to-r from-gray-900 to-blue-900 rounded-t-md">
+                 <button id="remover" class="absolute"><i class="bi bi-x text-gray-100 text-[25px] ml-65 xl:ml-102 xl:text-[20] hover:text-blue-500"></i></button>
+                 <h1 class=" lg:text-[23px] text-[16px] text-gray-100 pt-10 lg:pt-10 ml-9 lg:ml-9 xl:ml-18 titulo font-bold">
                      Informações do vendedor
                  </h1>
              </div>
-            <form action="" class="pl-8 pr-5 pb-8 xl:pl-10 text-gray-600" id="execucao_editar" >
+            <div class="pl-8 pr-5 pb-8 xl:pl-10 text-gray-600 grid grid-cols-1" id="edit-form" >
 
-                <div class="mt-5">
-                    <label for="Nome" class="font-medium">Nome <br></label>
-                    <input type="text" name="Nome" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]">
-                </div>
+                <input type="hidden" id="idEdit" name="id">
 
-                <div>
-                    <label for="Email" class="font-medium">Email <br></label>
-                    <input type="text" name="Email"  class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]">
-                </div>
+                <label for="nomeEdit" class="font-medium mt-5">Nome</label>
+                <input type="text" name="nomeEdit" id="nomeEdit" value="" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" required>
 
-                <div>
-                    <label for="NumeroWhatsApp" class="font-medium">Número do WhatsApp <br></label>
-                    <input type="text" name="NumeroWhatsApp" maxlength="14" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" >
-                </div>
-
-                <div>
-                    <label for="CPF" class="font-medium">CPF <br></label>
-                    <input type="text" name="CPF" maxlength="14" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-10 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]">
-                </div>
-
-                <button class="bg-gradient-to-r from-gray-900 to-blue-900 font-medium text-gray-100 w-58 h-9 xl:w-90 xl:h-9 rounded-md active:opacity-70 hover:opacity-90 shadow-lg text-[14px] sm:text-[17px]">Editar</button>
-            </form>
+                <label for="emailEdit" class="font-medium">Email</label>
+                <input type="text" name="emailEdit" id="emailEdit" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" required>
+                
+                <label for="numeroEdit" class="font-medium">Número do WhatsApp</label>
+                <input type="text" name="numeroEdit" id="numeroEdit" maxlength="14" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-4 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" required>
+                
+                <label for="cpfEdit" class="font-medium">CPF</label>
+                <input type="text" name="cpfEdit" id="cpfEdit" maxlength="14" class="mt-1 border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 mb-10 w-57 xl:w-90 pb-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" required>
+                
+                <button class="bg-gradient-to-r from-gray-900 to-blue-900 font-medium text-gray-100 w-58 h-9 xl:w-90 xl:h-9 rounded-md active:opacity-70 hover:opacity-90 shadow-lg text-[17px]" type="submit" onclick="editar()">Editar</button>
+            </div>
          </div>
 
          <div class="hidden bg-[#F9FAFB] w-75 sm:w-100 xl:w-130 ml-10 shadow-xl absolute z-50 top-30 text-[14px] border border-gray-200 rounded-md sm:ml-30 sm:top-18 md:ml-48 lg:ml-85 xl:ml-100 2xl:ml-127 xl:top-20" id="form-cadastrar">
-            <div class="flex gap-9 pt-8 pb-7 text-[20px] bg-gradient-to-r from-gray-900 to-blue-900 pl-12 sm:pl-25 text-gray-100 rounded-md">
-                <h1 class="pb-1 titulo xl:ml-12">Cadastrar Produto</h1>
+            <div class="flex gap-9 pt-8 pb-7 text-[23px] bg-gradient-to-r from-gray-900 to-blue-900 pl-12 sm:pl-19 text-gray-100 rounded-t-md">
+                <h1 class="pb-1 titulo xl:ml-17 font-bold" id="titulo-modal">Cadastrar Produto</h1>
                 <button class="-mt-13 sm:ml-11 xl:ml-25" id="remover1"><i class="bi bi-x text-[23px] hover:text-blue-400"></i></button>
             </div>
-            <form action="" class="pl-6 pr-6 pb-8 sm:pl-8 sm:pr-8 xl:pl-10 xl:pr-10 text-gray-600 font-medium text-[12px] xl:text-[15px]">
-                <div class="grid mt-6">
-                    <label for="Nome">Nome do Produto</label>
-                    <input type="text" class="border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1">
+            <div id="product-form" class="grid grid-cols-1 pl-6 pr-6 pb-8 sm:pl-8 sm:pr-8 xl:pl-10 xl:pr-10 text-gray-600 font-medium text-[12px] xl:text-[15px]">
+               
+                <input type="text" id="idProduto" class="hidden">
+                <label for="nome" class="mt-6 mb-2">Nome do Produto</label>
+                <input type="text" name="nomeProduto" id="nomeProduto" class="border border-gray-300 bg-gray-100 rounded-lg py-3 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1" required>
+               
+                <label for="descricao" class="mt-4 mb-2">Descrição</label>
+                <textarea type="text" name="descricaoProduto" id="descricaoProduto" class="border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1" required></textarea>
+                
+                <label for="preco" class="mt-4 mb-2">Preço</label>
+                <div class="flex">
+                    <span class="px-3 py-2.5 bg-gray-200 border border-gray-300  rounded-l-lg">R$</span>
+                    <input type="number" name="precoProduto" id="precoProduto" placeholder="0, 00" class="text-left border border-gray-300 bg-gray-100 rounded-r-lg py-2 pl-2 lg:-pl-5 w-full -ml-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" required>
                 </div>
-                <div class="grid mt-4">
-                    <label for="Descricao">Descrição</label>
-                    <textarea type="text" class="border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1"></textarea>
-                </div>
-                <div class="grid mt-4">
-                    <label for="Preco">Preço</label>
-                    <input type="text" class="border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1">
-                </div>
-                <div class="grid mt-4">
-                    <label for="Categoria">Categoria</label>
-                    <input type="text" class="border border-gray-300 bg-gray-100 rounded-lg py-2 pl-2 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB] pb-1 mt-1">
-                </div>
-                <div class="grid mt-4">
-                    <label for="Imagem" class="mb-4 ">Imagens</label>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-5 gap-4">
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md focus:outline-none active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400" >
-                            <img id="preview0" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
-                            <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview0', this)">
-                        </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
-                            <img id="preview1" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
-                            <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview1', this)">
-                        </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
-                            <img id="preview2" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload"></i></span>
-                            <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview2', this)">
-                        </label>
-                        <label class="relative border border-gray-300 h-20 w-20 rounded-md active:border-gray-500 mt-3 overflow-hidden hover:bg-blue-100 hover:border-gray-400">
-                           <img id="preview3" class="w-full h-full object-cover hidden absolute top-0 left-0"/>
-                            <span class="absolute top-7 pl-7.5 text-base text-gray-500 pointer-events-none"><i class="bi bi-upload hover:bg-blue-100"></i></span>
-                            <input type="file" class="hidden" accept="image/*" onchange="mostrarImagem(event, 'preview3', this)">
-                        </label>
+                
+                
+                <label for="image" class="mt-4">Imagens</label>
+                    <div class="grid">
+                        <div class="flex mt-3">
+                            <span class="px-3 bg-gray-200 py-2 border border-gray-300  rounded-l-lg">URL</span>
+                            <input type="text" id="imagensProduto" name="imagensProduto" class="text-left  border border-gray-300 bg-gray-100 rounded-r-lg py-2 lg:-pl-5 pl-2 w-full -ml-1 focus:outline-none focus:border-gray-500 focus:bg-[#F9FAFB]" placeholder="Adicione virgula entre as urls para separar, ex: url1, url2">
+                        </div>
+                        
                     </div>
 
+                <button class="bg-gradient-to-r from-gray-900 to-blue-900 h-10 w-62 sm:w-85 xl:w-110 xl:h-10 rounded-md mt-10 text-gray-100 font-bold shadow-lg active:opacity-70 hover:opacity-90" onclick="adicionarProduto()" id="btnAdicionarProduto">Criar produto</button>
+                <button class="bg-gradient-to-r from-gray-900 to-blue-900 h-10 w-62 sm:w-85 xl:w-110 xl:h-10 rounded-md mt-10 text-gray-100 font-bold shadow-lg active:opacity-70 hover:opacity-90 hidden" onclick="atualizarProduto()" id="btnEditarProduto">Editar produto</button>
                 </div>
-
-                <button class="bg-gradient-to-r from-gray-900 to-blue-900 h-10 w-62 sm:w-85 xl:w-110 xl:h-10 rounded-md mt-10 text-gray-100 shadow-lg active:opacity-70 hover:opacity-80 text-[14px] sm:text-[17px]">Criar produto</button>
-            </form>
          </div>
 
                
@@ -261,7 +231,7 @@
             <div id="carouselProdutos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4 justify-items-center max-w-7xl mx-auto">
                 
             </div>
-            
+
             <div class="flex justify-center mt-4">
                 <button onclick="window.location.href='./produtos.html'" class="hover:text-blue-700 font-medium py-2 px-6 rounded-md transition duration-300 transition-transform duration-300 transform hover:scale-105">
                     Ver todos
@@ -272,10 +242,30 @@
 
     <div id="footer-container"></div>
 
+    <script>
+        
+        const estaLogado = localStorage.getItem('idAdm');
+
+        if (!estaLogado) {
+
+            alert('Por favor, efetue o login primeiro.');
+            window.location.href = 'loginAdm.html';
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/JS/admin.js"></script>
     <script src="./assets/JS/script.js"></script>
     <script src="./assets/JS/index-js/index.js"></script>
     <script src="./assets/JS/funcoes.js"></script>
     <script src="./assets/JS/index-js/carrossel.js"></script>
-    <script src="./assets/JS/admin.js"></script>
+    <script type="module" src="./assets/JS/telas/admin1.js"></script> 
 </body>
 </html>
+
+<style>
+
+.div-areas:hover {
+    transition: ease-in-out 0.5s !important;
+}
+</style>

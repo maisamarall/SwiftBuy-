@@ -1,5 +1,10 @@
 // let bannerCount = 1;
 
+const http = axios.create({
+  baseURL: "https://localhost:7279/api",
+  headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*"},
+});
+
 function adicionarBanner() {
     const bannerId = Date.now();
     // const bannerCount = banners.length + 1;
@@ -96,3 +101,150 @@ function removerBanner(id) {
         banner.remove();
     }
 }
+
+function preencherFormularioAdm(id=1) {
+
+    document.getElementById('idEdit').value = localStorage.getItem("idAdm") || '';
+    document.getElementById('nomeEdit').value = localStorage.getItem("nomeAdm") || '';
+    document.getElementById('emailEdit').value = localStorage.getItem("emailAdm") || '';
+    document.getElementById('numeroEdit').value = localStorage.getItem("telefoneAdm") || '';
+    document.getElementById('cpfEdit').value = localStorage.getItem("cpfAdm") || '';
+}
+
+function editar() {
+    
+    const id = document.getElementById('idEdit').value;
+    const nome = document.getElementById('nomeEdit').value;
+    const email = document.getElementById('emailEdit').value;
+    const telefone = document.getElementById('numeroEdit').value;
+    const cpf = document.getElementById('cpfEdit').value;
+
+    localStorage.setItem("idAdm", id);
+    localStorage.setItem("nomeAdm", nome);
+    localStorage.setItem("emailAdm", email);
+    localStorage.setItem("telefoneAdm", telefone);
+    localStorage.setItem("cpfAdm", cpf);
+
+    const jsonEdicao = {
+        id: id,
+        nome: nome,
+        email: email,
+        telefone: telefone,
+        cpf: cpf
+    };
+    
+    try {
+
+        http.put(`/Usuario/${id}?_method=PUT`, jsonEdicao);
+        alert('Informações atualizadas com sucesso!');
+        window.location.href = 'area_administrador.html';
+
+    } catch (error) {
+        console.error('Erro ao atualizar informações:', error);
+    }
+}
+
+function adicionarProduto() {
+   
+    const nome = document.getElementById('nomeProduto').value;
+    const descricao = document.getElementById('descricaoProduto').value;
+
+    const preco = document.getElementById('precoProduto').value;
+    const imagensSplit = document.getElementById('imagensProduto').value.split(',');
+
+    const imagens = imagensSplit.map(url => {
+        return {
+            urlImagem: url
+        }
+    })
+    
+    const jsonCadastroProduto = {
+        nome: nome,
+        descricao: descricao,
+        categoria: "string",
+        preco: preco,
+        imagemProduto: imagens
+    };
+
+    try {
+
+        http.post('/Produto', jsonCadastroProduto);
+        alert('Produto cadastrado com sucesso!');
+        window.location.href = 'area_administrador.html';
+
+    } catch (error) {
+        console.error('Erro ao cadastrar produto:', error);
+    }
+    
+}
+
+function atualizarProduto() {
+
+    const idProduto = document.getElementById('idProduto').value;
+    const nome = document.getElementById('nomeProduto').value;
+    const descricao = document.getElementById('descricaoProduto').value;
+
+    const preco = document.getElementById('precoProduto').value;
+    const imagensSplit = document.getElementById('imagensProduto').value.split(',');
+
+    const imagens = imagensSplit.map(url => {
+        return {
+            urlImagem: url
+        }
+    })
+    
+    const jsonAtualizarProduto = {
+        nome: nome,
+        descricao: descricao,
+        categoria: "string",
+        preco: preco,
+        imagemProduto: imagens
+    };
+
+    try {
+
+        http.put(`/Produto?id=${idProduto}`, jsonAtualizarProduto);
+        alert(`Produto '${nome}' atualizado com sucesso!`);
+        window.location.href = 'area_administrador.html';
+
+    } catch (error) {
+        console.error('Erro ao cadastrar produto:', error);
+    }
+}
+
+function excluirProduto(id) {
+
+    if (confirm('Deseja realmente excluir o produto? A ação não terá reversão.')) {
+        
+        http.delete(`/Produto/${id}`);
+        alert(`Produto deletado com sucesso!`);
+        window.location.href = 'area_administrador.html';
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById('idVisualizar').value = localStorage.getItem("nomeAdm");
+    document.getElementById('nomeVisualizar').value = localStorage.getItem("nomeAdm");
+    document.getElementById('emailVisualizar').value = localStorage.getItem("emailAdm");
+    document.getElementById('numeroVisualizar').value = localStorage.getItem("telefoneAdm");
+    document.getElementById('cpfVisualizar').value = localStorage.getItem("cpfAdm");
+    document.getElementById("editar-informacao").addEventListener("click", preencherFormularioAdm);
+
+    const nomeVendedor = document.getElementById('nomeVendedorAdm');
+
+    if (nomeVendedor) {
+        nomeVendedor.innerHTML = "Bem-vindo(a), " + localStorage.getItem("nomeAdm");
+    }
+
+    const editarProduto = document.getElementById("editar-produtos");
+
+    editarProduto.addEventListener('click', () => {
+
+        alert('cliquei');
+        formCadastrar.classList.toggle("hidden");
+        document.getElementById("titulo-modal").value = "Editar produto";
+    });
+
+});
