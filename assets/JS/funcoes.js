@@ -166,21 +166,7 @@ function criarRodape() {
 criarRodape();
   
   
-function criarCard(produto) {
-    return `
-    <div class="flex-shrink-0 min-w-[140px] w-[45vw] max-w-[180px] sm:w-[160px] sm:max-w-[200px] lg:w-[180px] lg:max-w-[220px]">
-      <div class="relative bg-white text-xs sm:text-sm font-semibold text-gray-700 rounded-lg border-2 border-transparent p-2 h-full flex flex-col justify-between hover:shadow-md transition-all duration-300 hover:border-blue-400">
-        <div class="h-[140px] sm:h-[160px] flex items-center justify-center">
-          <img src="${produto.imagem}" alt="${produto.nome}" class="max-w-full max-h-full rounded-md object-contain">
-        </div>
-        <div class="mt-2 px-1">
-          <p class="ml-3 mt-4 text-[13px] lg:text-base lg:ml-4">${produto.preco}</p>
-          <p class="mb-2 ml-3 mt-2 truncate">${produto.nome}</p>
-        </div>
-      </div>
-    </div>
-`; 
-}
+
 
   
 function toggleMenu() {
@@ -231,14 +217,6 @@ function scrollRight(carouselId) {
         </div>
     `;
   }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-
-    const carouselProdutos = document.getElementById('carouselProdutos');
-    if (carouselProdutos) {
-      carouselProdutos.innerHTML = produtosCards.slice(0, limite_produtos).map(criarCard).join('');
-    }
-  });
   
   //   if (carousel && Array.isArray(produtosCards)) {
   //     produtosCards.forEach(produto => {

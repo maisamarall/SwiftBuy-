@@ -1,60 +1,19 @@
-window.addEventListener('scroll', () => {
-    const barraSuperior = document.getElementById('barraSuperior');
-    if (window.scrollY > 30) {
-        barraSuperior.classList.add('fixed', 'top-0');
-    }
-    else {
-        barraSuperior.classList.remove('fixed', 'top-0');
-    }
-});
+// window.addEventListener('scroll', () => {
+//     const barraSuperior = document.getElementById('barraSuperior');
+//     if (window.scrollY > 30) {
+//         barraSuperior.classList.add('fixed', 'top-0');
+//     }
+//     else {
+//         barraSuperior.classList.remove('fixed', 'top-0');
+//     }
+// });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const link = document.querySelector("voltar");
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      document.querySelector("#barraSuperior").scrollIntoView({ behavior: "smooth" });
-    });
-  });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const filtrarAcessados = document.getElementById("filtrar");
-    const opcoesAcessados = document.getElementById("opcoes");
-    
-    filtrarAcessados.addEventListener('click', () => {
-        opcoesAcessados.classList.toggle("hidden");
-    });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const filtrarLancamentos = document.getElementById("filtrar1");
-    const opcoesLancamentos = document.getElementById("opcoes1");
-    
-    filtrarLancamentos.addEventListener('click', () => {
-        opcoesLancamentos.classList.toggle("hidden");
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const filtrarProdutos = document.getElementById("filtrar2");
-    const opcoesProdutos = document.getElementById("opcoes2");
-    
-    filtrarProdutos.addEventListener('click', () => {
-        opcoesProdutos.classList.toggle("hidden");
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const filtrarPromocoes = document.getElementById("filtrar3");
-    const opcoesPromocoes = document.getElementById("opcoes3");
-    
-    filtrarPromocoes.addEventListener('click', () => {
-        opcoesPromocoes.classList.toggle("hidden");
-    });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const acessarInformacoes = document.getElementById("acessarInformacoes");
-    const exibirInformacoes = document.getElementById("exibirInformacoes");
+    const exibirInformacoes = document.getElementById("adm-mobile-form");
 
     acessarInformacoes.addEventListener('click', () => {
         exibirInformacoes.classList.toggle("hidden");
@@ -63,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const acessar = document.getElementById("acessar");
-    const exibir = document.getElementById("exibir");
+    const exibir = document.getElementById("adm-form");
 
     acessar.addEventListener('click', () => {
         exibir.classList.toggle("hidden");
@@ -112,7 +71,7 @@ function mostrarImagem(event, idPreview, input) {
     if (arquivo) {
         preview.src = URL.createObjectURL(arquivo);
         preview.classList.remove("hidden");
-        if (span) span.classList.add("hidden"); 
+        if (span) span.classList.add("hidden");
     }
 }
 
@@ -297,32 +256,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // DETALHE DO PRODUTO
 
-console.log("--> DEBUG: script.js foi carregado!");
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("--> DEBUG: DOMContentLoaded disparado!");
+document.addEventListener('DOMContentLoaded', function () {
 
     // --- CÓDIGO PARA A TROCA DE IMAGENS ---
     const mainProductImage = document.getElementById('main-product-image');
     const thumbnailGallery = document.getElementById('thumbnail-gallery');
 
     if (mainProductImage && thumbnailGallery) {
-        console.log("--> DEBUG: mainProductImage e thumbnailGallery ENCONTRADOS!");
 
-        thumbnailGallery.addEventListener('click', function(event) {
-            console.log("--> DEBUG: Clique detectado na galeria de miniaturas!");
+        thumbnailGallery.addEventListener('click', function (event) {
+
             const clickedThumbnailDiv = event.target.closest('.thumbnail');
-            
+
             if (clickedThumbnailDiv) {
                 const clickedThumbnailImage = clickedThumbnailDiv.querySelector('img');
                 if (clickedThumbnailImage) {
-                    console.log("--> DEBUG: Miniatura clicada: ", clickedThumbnailImage.src);
+
                     document.querySelectorAll('.thumbnail').forEach(thumb => {
                         thumb.classList.remove('active-thumbnail');
                     });
                     clickedThumbnailDiv.classList.add('active-thumbnail');
                     mainProductImage.src = clickedThumbnailImage.src;
-                    console.log("--> DEBUG: Imagem principal atualizada para: ", mainProductImage.src);
+
                 } else {
                     console.log("--> DEBUG: Não foi possível encontrar a tag <img> dentro da miniatura clicada.");
                 }
@@ -334,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const firstThumbnail = thumbnailGallery.querySelector('.thumbnail');
         if (firstThumbnail && !firstThumbnail.classList.contains('active-thumbnail')) {
             firstThumbnail.classList.add('active-thumbnail');
-            console.log("--> DEBUG: Adicionada classe active-thumbnail à primeira miniatura.");
         }
 
     } else {
@@ -364,21 +318,21 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateTotalPrice() {
             const currentQuantity = parseInt(productQuantityInput.value);
             const newTotalPrice = (unitPrice * currentQuantity).toFixed(2); // Multiplica e formata para 2 casas decimais
-            
+
             // Formata para o padrão brasileiro (R$ X.XXX,XX)
             productPriceDisplay.textContent = `R$ ${newTotalPrice.replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
             console.log("Preço total atualizado para:", productPriceDisplay.textContent);
         }
 
         // Adiciona listeners para os botões de quantidade
-        incrementBtn.addEventListener('click', function() {
+        incrementBtn.addEventListener('click', function () {
             let currentValue = parseInt(productQuantityInput.value);
             productQuantityInput.value = currentValue + 1;
             updateTotalPrice(); // Chama a função para atualizar o preço
             console.log("Quantidade aumentada para:", productQuantityInput.value);
         });
 
-        decrementBtn.addEventListener('click', function() {
+        decrementBtn.addEventListener('click', function () {
             let currentValue = parseInt(productQuantityInput.value);
             if (currentValue > 1) {
                 productQuantityInput.value = currentValue - 1;
