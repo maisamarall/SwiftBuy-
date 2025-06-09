@@ -39,7 +39,21 @@ if (btnLogin !== null) {
             try {
 
                 const response = logar(email, senha);
-                window.location.href = 'index.html';
+
+                Promise.resolve(response).then(
+                    (value) => {
+                        const retornoLogin = value.data; // "Success"
+                        localStorage.setItem("id", retornoLogin.id);
+                        localStorage.setItem("nome", retornoLogin.nome);
+                        localStorage.setItem("email", retornoLogin.email);
+                        localStorage.setItem("telefone", retornoLogin.telefone);
+                        localStorage.setItem("cpf", retornoLogin.cpf);
+                        localStorage.setItem("tipo", retornoLogin.tipo);
+
+                        window.location.href = 'index.html';
+
+                    }
+                );
 
             } catch (error) {
 
@@ -75,7 +89,7 @@ if (btnLoginAdm !== null) {
 
                 Promise.resolve(response).then(
                     (value) => {
-                        const retornoLogin = value.data; // "Success"
+                        const retornoLogin = value.data;
                         localStorage.setItem("idAdm", retornoLogin.id);
                         localStorage.setItem("nomeAdm", retornoLogin.nome);
                         localStorage.setItem("emailAdm", retornoLogin.email);

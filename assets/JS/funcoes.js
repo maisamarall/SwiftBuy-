@@ -1,4 +1,41 @@
+const http = axios.create({
+    baseURL: "https://localhost:7279/api",
+    headers: {
+        "Content-Type": "application/json"
+    },
+});
+
 function criarNavbar() {
+
+    const favoritos = JSON.parse(localStorage.getItem("meusFavoritos")) || [];
+    let contagemFavoritos = 0;
+
+    if (favoritos.length > 0) {
+
+        favoritos.forEach(item => {
+            if (item.id == localStorage.getItem("id")) {
+                contagemFavoritos++;
+            }
+        });
+    }
+
+    const meuCarrinho = JSON.parse(localStorage.getItem("meusCarrinhos")) || [];
+    let contagemCarrinho = 0;
+
+    if (meuCarrinho.length > 0) {
+
+        let contador = 1;
+        meuCarrinho.forEach(item => {
+
+
+            if (item.idUsuario == localStorage.getItem("id") && item.quantidade > 0) {
+                contagemCarrinho += contador;
+            }
+        });
+    }
+
+
+
     const navHTML = `
       <nav class="w-full flex flex-wrap items-center justify-between px-4 sm:px-8 lg:px-16 py-2 bg-gradient-to-r from-gray-900 to-blue-900 shadow-sm fixed top-0 left-0 w-full z-50" id="barraSuperior">
           <div class="flex flex-row items-center gap-2 sm:gap-4 flex-grow">
@@ -49,7 +86,7 @@ function criarNavbar() {
                       <span>Contato</span>
                   </a>
               </div>
-              <a href="loginAdm.html" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
+              <a href="loginAdm.html" id="linkAdmin" class="text-sm font-semibold self-start inline-flex items-center gap-2 border-b-2 border-transparent hover:border-blue-500 transition duration-300">
                   Área do administrador
               </a>
           </div>
@@ -60,24 +97,27 @@ function criarNavbar() {
                       Área do administrador
                   </a>
                   <li>
-                      <a href="register.html" class="flex items-center justify-center h-full">
+                      <a href="register.html" id="iconPerfil" class="flex items-center justify-center h-full">
                           <i class="bi bi-person transition-transform duration-200 hover:scale-110"></i>
                       </a>
                   </li>
-                  <li>
-                      <a href="carrinho.html" class="flex items-center justify-center h-full">
-                          <i class="bi bi-cart2 transition-transform duration-200 hover:scale-110"></i>
-                      </a>
+                  <li class="relative">
+                    <a href="carrinho.html" class="flex items-center justify-center h-full">
+                        <i class="bi bi-cart2 text-xl pt-1 transition-transform duration-200 hover:scale-110"></i>
+                        <span id="contadorCarrinho" class="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden"></span>
+                    </a>
                   </li>
-                  <li>
-                      <a href="favoritos.html" class="flex items-center justify-center h-full">
-                          <i class="bi bi-heart text-xl pt-1 transition-transform duration-200 hover:scale-110"></i>
-                      </a>
+                  <li class="relative">
+                    <a href="favoritos.html" class="flex items-center justify-center h-full">
+                        <i class="bi bi-heart text-xl pt-1 transition-transform duration-200 hover:scale-110"></i>
+                        <span id="contadorFavoritos" class="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center hidden"></span>
+                    </a>
                   </li>
-                  <li class="flex text-center items-center justify-center">
+                  
+                  <li class="flex text-center items-center justify-center mr-4">
                       <a href="https://wa.me/+5514997837479" class="flex flex-col items-center text-sm text-white transition-transform duration-200 hover:scale-105">
                           <i class="bi bi-whatsapp text-xl"></i>
-                          <span>Entre em contato</span>
+                          <span></span>
                       </a>
                   </li>
               </ul>
@@ -98,13 +138,76 @@ function criarNavbar() {
           </div>
       </nav>
     `;
-  
-    document.body.insertAdjacentHTML('afterbegin', navHTML)
+
+    document.body.insertAdjacentHTML('afterbegin', navHTML);
+
+    const nome = localStorage.getItem("nome");
+
+    if (nome) {
+
+        const iconPerfil = document.getElementById("iconPerfil");
+        const linkAdmin = document.getElementById("linkAdmin");
+
+        if (iconPerfil) iconPerfil.style.display = "none";
+        if (linkAdmin) linkAdmin.style.display = "none";
+
+        const userDiv = document.createElement("div");
+        userDiv.className = "hidden md:flex items-center gap-4 text-white text-sm font-semibold";
+        userDiv.id = "usuarioLogado";
+
+        userDiv.innerHTML = `
+            <span>Bem-vindo(a), <strong>${nome}</strong></span>
+            <button onclick="logout()" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-xs">Deslogar</button>
+        `;
+
+        const navbar = document.getElementById("barraSuperior");
+
+        if (navbar) {
+
+            navbar.appendChild(userDiv);
+            userDiv.classList.remove("hidden");
+        }
+    }
+
+    const contadorFavoritos = document.getElementById("contadorFavoritos");
+
+    if (contadorFavoritos) {
+        if (contagemFavoritos > 0) {
+            contadorFavoritos.textContent = contagemFavoritos;
+            contadorFavoritos.classList.remove("hidden");
+        } else {
+            contadorFavoritos.classList.add("hidden");
+        }
+    }
+
+    const contadorCarrinho = document.getElementById("contadorCarrinho");
+
+    if (contadorCarrinho) {
+
+        console.log("Contagem carrinho:", contagemCarrinho);
+        if (contagemCarrinho > 0) {
+            contadorCarrinho.textContent = contagemCarrinho;
+            contadorCarrinho.classList.remove("hidden");
+        } else {
+            contadorCarrinho.classList.add("hidden");
+        }
+    }
 }
-  
-  
+
+function logout() {
+
+    localStorage.removeItem("id");
+    localStorage.removeItem("nome");
+    localStorage.removeItem("email");
+    localStorage.removeItem("telefone");
+    localStorage.removeItem("cpf");
+    localStorage.removeItem("tipo");
+
+    location.reload();
+}
+
 function criarRodape() {
-  const footerHTML = `
+    const footerHTML = `
       <footer class="w-full text-slate-400 bg-gradient-to-r from-slate-900 to-slate-800 mt-16">
 
         <div class="fixed z-50 right-4 bottom-4 p-3 h-14 w-14 lg:h-18 lg:w-18 rounded-full shadow-md shadow-gray-600/30 bg-green-600 hover:bg-green-500 transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
@@ -161,39 +264,34 @@ function criarRodape() {
     </footer>
   `;
 
-  document.getElementById("footer-container").innerHTML = footerHTML;
+    document.getElementById("footer-container").innerHTML = footerHTML;
 }
-criarRodape();
-  
-  
 
 
-  
 function toggleMenu() {
     const menu = document.getElementById("mobile-menu");
     menu.classList.toggle("hidden");
 }
 
-
 function scrollLeft(carouselId) {
-  const carousel = document.getElementById(carouselId);
-  carousel.scrollBy({
-    left: -carousel.offsetWidth * 0.8,
-    behavior: "smooth"
-  });
+    const carousel = document.getElementById(carouselId);
+    carousel.scrollBy({
+        left: -carousel.offsetWidth * 0.8,
+        behavior: "smooth"
+    });
 }
 
 function scrollRight(carouselId) {
-  const carousel = document.getElementById(carouselId);
-  carousel.scrollBy({
-    left: carousel.offsetWidth * 0.8,
-    behavior: "smooth"
-  });
+    const carousel = document.getElementById(carouselId);
+    carousel.scrollBy({
+        left: carousel.offsetWidth * 0.8,
+        behavior: "smooth"
+    });
 }
-  
-  //da simone
-  function cardsNovos(produto) {
-      return `
+
+//da simone
+function cardsNovos(produto) {
+    return `
         <div class="w-full lg:mt-10 grid grid-cols-2 px-5 mt-5 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
           <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 h-45 w-35 lg:h-65 lg:w-45 rounded-md shadow-md hover:border-2 hover:border-blue-400">
             <img src="${produto.imagem}" alt="${produto.nome}" class="w-20 ml-7.5 mt-2 lg:w-30 lg:mt-5">
@@ -202,9 +300,9 @@ function scrollRight(carouselId) {
           </div>
         </div>
       `;
-  }
-  
-  function cardFavoritos(produto) {
+}
+
+function cardFavoritos(produto) {
     return `
         <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 h-45 w-35 lg:h-65 lg:w-45 rounded-md shadow-md">
             <img src="./assets/imgs/produto10.png" alt="Luva de box" class="w-20 ml-7.5 mt-2 lg:w-30 lg:mt-5">
@@ -216,12 +314,144 @@ function scrollRight(carouselId) {
             </button>
         </div>
     `;
-  }
-  
-  //   if (carousel && Array.isArray(produtosCards)) {
-  //     produtosCards.forEach(produto => {
-  //       const cardHTML = criarCard(produto);
-  //       carousel.insertAdjacentHTML('beforeend', cardHTML);
-  //     });
-  //   }
-  // });
+}
+
+async function getProdutos() {
+
+    let page = 1;
+    const limite_produtos = 10;
+
+    const categoria = '1';
+    const container = document.getElementById("produtos");
+
+    if (container !== null) {
+
+        while (true) {
+
+            const response = await http.get(`/Produto?pagina=${page}&tamanho=${limite_produtos}&categoria=${categoria}`);
+            const produtos = response.data;
+
+            if (!produtos || produtos.length === 0) {
+                break;
+            }
+
+            produtos.forEach(produto => {
+
+                const nomeProduto = encodeURIComponent(produto.nome);
+                const precoProduto = produto.preco.toFixed(2).replace('.', ',');
+
+                container.innerHTML += `
+                <div class="w-full lg:mt-10 grid grid-cols-2 px-5 mt-5 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
+                    <a href="teladetalhe.html?id=${produto.id}&nomeProduto=${nomeProduto}"> 
+                        <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-transparent hover:border-2 hover:border-blue-400">
+                            <img src="${produto.imagemProduto[0].urlImagem}" alt="${produto.nome}" class="w-20 h-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
+                            <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-6 text-[14px] mt-2 ml-3 truncate">${produto.nome}</p>
+                            <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2 preco">R$ ${precoProduto}</p>
+                            <p class="ml-3 mt-2 lg:ml-4 truncate">${produto.descricao}</p>
+                        </div>
+                    </a>
+                </div>
+            `;
+            });
+
+            page++;
+        }
+    }
+
+}
+
+async function getProdutosMaisVendidos() {
+
+    const container = document.getElementById("carouselMaisVendidos");
+    const response = await http.get(`/Produto/maisVendidos`);
+    const produtosMaisVendidos = response.data;
+
+    const gridContainer = document.createElement("div");
+    gridContainer.className = "w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-y-5 px-5";
+
+    if (container !== null) {
+        produtosMaisVendidos.forEach(produto => {
+            const nomeProduto = encodeURIComponent(produto.nome);
+            const precoProduto = produto.preco.toFixed(2).replace('.', ',');
+
+            const card = document.createElement("a");
+            card.href = `teladetalhe.html?id=${produto.id}&nomeProduto=${nomeProduto}`;
+            card.innerHTML = `
+            <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-transparent hover:border-2 hover:border-blue-400">
+                <img src="${produto.imagemProduto[0].urlImagem}" alt="${produto.nome}" class="w-20 h-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
+                <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-6 text-[14px] mt-2 ml-3 truncate">${produto.nome}</p>
+                <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2 preco">R$ ${precoProduto}</p>
+                <p class="ml-3 mt-2 lg:ml-4 truncate">${produto.descricao}</p>
+            </div>
+        `;
+            gridContainer.appendChild(card);
+        });
+
+        container.appendChild(gridContainer);
+    }
+}
+
+
+async function getMeusProdutosFavoritos() {
+
+    const meusProdutosFavoritos = JSON.parse(localStorage.getItem("meusFavoritos")) || [];
+    const container = document.getElementById("meus-favoritos");
+
+    if (container !== null) {
+
+        meusProdutosFavoritos.forEach(produto => {
+
+            const nomeProduto = encodeURIComponent(produto.nome);
+            const precoProduto = produto.preco.toFixed(2).replace('.', ',');
+
+            container.innerHTML += `
+            <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-70 w-35 lg:h-85 lg:w-45 rounded-lg shadow-md">
+                <img src="${produto.imagem}" alt="${produto.nome}" class="w-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
+                <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-3 text-[14px] mt-2 ml-3 truncate">${produto.nome}</p>
+                <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2 preco">R$ ${precoProduto}</p>
+                <p class="ml-3 mt-2 lg:ml-4 truncate">${produto.descricao}</p>
+
+                <button class="border border-blue-400 rounded-lg h-7 w-14 sm:h-8 sm:w-17 text-blue-400 font-semibold mt-7 ml-9 lg:mt-12 lg:ml-13 text-[13px] hover:text-white hover:bg-blue-400 active:opacity-70" onclick="excluirProdutoFavorito(${produto.id})">
+                    Excluir
+                </button>
+
+
+            </div>
+        `;
+        });
+    }
+
+
+
+}
+
+async function excluirProdutoFavorito(produtoId) {
+
+    if (confirm("Deseja realmente excluir o produto dos favoritos? A ação não terá reversão!")) {
+
+        const meusProdutosFavoritos = localStorage.getItem("meusFavoritos") || [];
+
+        if (meusProdutosFavoritos.length > 0) {
+
+            const favoritos = JSON.parse(meusProdutosFavoritos);
+            const index = favoritos.findIndex(produto => produto.id == produtoId);
+
+            if (index !== -1) {
+                favoritos.splice(index, 1);
+                localStorage.setItem("meusFavoritos", JSON.stringify(favoritos));
+                getMeusProdutosFavoritos();
+                location.reload();
+            }
+        }
+    }
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    getProdutosMaisVendidos();
+    getProdutos();
+    criarRodape();
+    getMeusProdutosFavoritos();
+});
+

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="./assets/CSS/telabase.css">
     <link rel="shortcut icon" href="assets/imgs/Logo-navegação.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-gray-100 overflow-x-hidden">
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
             criarNavbar();
         };
     </script>
 
     <main>
         <div class="pl-4 sm:pl-8 md:pl-8 lg:pl-10 lg:mt-8 xl:pl-17 xl:px-5">
-            <div class="flex text-blue-400 text-[12px] sm:text-sm lg:text-base font-semibold ml-5 mt-5 gap-1 lg:gap-2">
+            <div
+                class="flex text-blue-400 text-[12px] sm:text-sm lg:text-base font-semibold ml-6 mt-15 mb-8 gap-3 lg:gap-4">
                 <a href="index.html">
                     <p class="hover:border-b-2 hover:border-full inline-block">Voltar</p>
                 </a>
@@ -28,37 +31,121 @@
                     <p class="hover:border-b-2 hover:border-full inline-block">Produtos</p>
                 </a>
 
-                <div class="absolute group inline-block right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28">
-                    <button class="flex text-gray-500  gap-2 hover:text-gray-400 active:opacity-70" id="filtrar2">
+                <div
+                    class="absolute inline-block right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28">
+                    <button class="flex text-gray-500 gap-2 hover:text-gray-400 active:opacity-70" id="filtrar2">
                         <i class="bi bi-funnel-fill"></i>
                         <p>Filtrar</p>
                     </button>
-                
 
-                    <div class="hidden grid justify-items-start fixed z-50 mt-2 text-gray-600 bg-[#F9FAFB] shadow-md w-35 h-20 sm:w-40 sm:h-23 sm:pb-3 sm:pl-5 pt-3 pl-3 text-sm/7 sm:text-[16px] rounded-lg right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28 group-hover:grid" id="opcoes2">
-                        <button class="hover:text-blue-400 active:opacity-70"> Preço</button>
-                        <button class="hover:text-blue-400 sm:mt-2 active:opacity-70">Mais vendidos</button>
+                    <div class="hidden fixed z-50 mt-2 text-gray-600 bg-[#F9FAFB] shadow-md w-35 h-30 sm:w-40 sm:h-30 sm:pb-3 sm:pl-5 pt-3 pl-3 text-sm/7 sm:text-[16px] rounded-lg right-10 sm:right-17 md:right-14 lg:right-19 xl:right-24 2xl:right-28"
+                        id="opcoes2">
+                        <button class="hover:text-blue-400 active:opacity-70" id="filtrarPrecoCrescente"
+                            onclick="filtrarPrecoCrescente()">Preço crescente</button>
+                        <button class="hover:text-blue-400 sm:mt-2 active:opacity-70" id="filtrarPrecoDecrescente"
+                            onclick="filtrarPrecoDecrescente()">Preço decrescente</button>
+                        <button class="hover:text-blue-400 sm:mt-2 active:opacity-70" id="filtrarMaisVendidos"
+                            onclick="filtrarMaisVendidos()">Mais vendidos</button>
                     </div>
                 </div>
             </div>
-    
-            <div class="w-full lg:mt-10 grid grid-cols-2 px-5 mt-5 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
-                <a href="teladetalhe.html"> 
-                    <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-transparent hover:border-2 hover:border-blue-400">
-                        <img src="assets/imgs/notebook-laptop.avif" alt="Luva de box" class="w-20 h-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
-                        <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-6 text-[14px] mt-2 ml-3">Notebook Dell</p>
-                        <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2">R$ 5.099,00</p>
-                        <p class="ml-3 mt-2 lg:ml-4">Equipado com processador Intel Core...</p>
-                    </div>
-                </a>
-                <!-- CHAMAR FUNÇÃO -->
-            </div>
+
+            <div class="w-full lg:mt-14 grid grid-cols-2 px-5 mt-8 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7"
+                id="produtos"></div>
         </div>
     </main>
 
     <div id="footer-container"></div>
-  
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/JS/funcoes.js"></script>
     <script src="./assets/JS/script.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("filtrar2");
+            const menu = document.getElementById("opcoes2");
+
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                menu.classList.toggle("hidden");
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target)) {
+                    menu.classList.add("hidden");
+                }
+            });
+        });
+
+        function extrairPreco(texto) {
+            return parseFloat(
+                texto.replace('R$', '').replace('.', '').replace(',', '.').trim()
+            );
+        }
+
+        function ordenarProdutos(comparador) {
+            const container = document.getElementById("produtos");
+            const produtos = Array.from(container.children);
+
+            produtos.sort((a, b) => {
+                const precoA = extrairPreco(a.querySelector(".preco").textContent);
+                const precoB = extrairPreco(b.querySelector(".preco").textContent);
+                return comparador(precoA, precoB);
+            });
+
+            container.innerHTML = "";
+            produtos.forEach(p => container.appendChild(p));
+        }
+
+        function filtrarPrecoCrescente() {
+            ordenarProdutos((a, b) => a - b);
+        }
+
+        function filtrarPrecoDecrescente() {
+            ordenarProdutos((a, b) => b - a);
+        }
+
+        function filtrarMaisVendidos() {
+            
+            http.get(`/Produto/maisVendidos`)
+                .then(response => {
+
+                    const produtos = response.data;
+                    const container = document.getElementById("produtos");
+
+                    container.innerHTML = "";
+
+                    produtos.forEach(produto => {
+
+                        const nomeProduto = encodeURIComponent(produto.nome);
+                        const precoProduto = produto.preco.toFixed(2).replace('.', ',');
+
+                        container.innerHTML += `
+                         <div class="w-full lg:mt-10 grid grid-cols-2 px-5 mt-5 gap-y-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
+                             <a href="teladetalhe.html?id=${produto.id}&nomeProduto=${nomeProduto}"> 
+                                 <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-transparent hover:border-2 hover:border-blue-400">
+                                     <img src="${produto.imagemProduto[0].urlImagem}" alt="${produto.nome}" class="w-20 h-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
+                                     <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-6 text-[14px] mt-2 ml-3 truncate">${produto.nome}</p>
+                                     <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2 preco">R$ ${precoProduto}</p>
+                                     <p class="ml-3 mt-2 lg:ml-4 truncate">${produto.descricao}</p>
+                                 </div>
+                             </a>
+                         </div>
+                     `;
+
+                    });
+                         
+                }).catch(error => {
+                    
+                    console.error("Erro ao obter produtos mais vendidos:", error);
+                });
+        }
+
+
+    </script>
+
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,103 +11,351 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-gray-100 overflow-x-hidden">
     <script>
-        window.onload = function() {
+        window.onload = function () {
             criarNavbar();
         };
     </script>
 
-        <div class="bg-gray-100 min-h-screen antialiased">
-            <div class="pl-4 sm:pl-8 md:pl-8 lg:pl-10 lg:mt-8 xl:pl-17 xl:px-5">
-                <div class="flex text-blue-400 text-[12px] sm:text-sm lg:text-base font-semibold ml-5 mt-5 gap-1 lg:gap-2">
-                    <a href="index.html">
-                        <p class="hover:border-b-2 hover:border-full inline-block">Voltar</p>
-                    </a>
-                    <p class="text-slate-800"><i class="bi bi-arrow-right-short"></i></p>
-                    <p>Notebook Dell Gamer</p>
-                </div>
+    <div class="bg-gray-100 min-h-screen antialiased">
+        <div class="pl-4 sm:pl-8 md:pl-8 lg:pl-10 lg:mt-15 xl:pl-17 xl:px-5">
+            <div class="flex text-blue-400 text-[12px] sm:text-sm lg:text-base font-semibold ml-5 mt-5 gap-1 lg:gap-2">
+                <a href="index.html">
+                    <p class="hover:border-b-2 hover:border-full inline-block">Voltar</p>
+                </a>
+                <p class="text-slate-800"><i class="bi bi-arrow-right-short"></i></p>
+                <p>Detalhes do meu produto</p>
             </div>
-            <main class="mx-auto py-8 px-4 sm:px-8 md:px-8 lg:px-10 lg:mt-1 xl:px-21">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                
-                    <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-                        <div class="p-10 sm:p-6 lg:p-8 "> 
-                            <div class="flex flex-row sm:flex-col gap-4">
-                                <div class="flex flex-col gap-4">
-                                    <div class="rounded-lg bg-gray-100 aspect-w-16 aspect-h-10 sm:aspect-w-1 sm:aspect-h-1 flex-grow flex items-center justify-center">
-                                        <img id="main-product-image" src="assets/imgs/notebook-laptop.avif" alt="Imagem principal do produto">
+        </div>
+        <main class="mx-auto py-8 px-4 sm:px-8 md:px-8 lg:px-10 lg:mt-1 xl:px-21">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                    <div class="p-10 sm:p-6 lg:p-8 ">
+                        <div class="flex flex-row sm:flex-col gap-4">
+                            <div class="flex flex-col gap-4">
+                                <div
+                                    class="rounded-lg bg-gray-100 aspect-w-16 aspect-h-10 sm:aspect-w-1 sm:aspect-h-1 flex-grow flex items-center justify-center">
+                                    <img id="main-product-image" src="" alt="Imagem principal do produto">
+                                </div>
+                                <div id="thumbnail-gallery" class="flex flex-row gap-5 text-center sm:gap-5">
+                                    <div
+                                        class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail active-thumbnail">
+                                        <img src="assets/imgs/notebook-laptop.avif" alt="imagem do produto">
                                     </div>
-                                    <div id="thumbnail-gallery" class="flex flex-row gap-5 text-center sm:gap-5">
-                                        <div class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail active-thumbnail">
-                                            <img src="assets/imgs/notebook-laptop.avif" alt="imagem do produto" >
-                                        </div>
-                                        <div class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
-                                            <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-10.avif" alt="imagem do produto" >
-                                        </div>
-                                        <div class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
-                                            <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-1-v2.avif" alt="imagem do produto" >
-                                        </div>
-                                        <div class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
-                                            <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-4-v2.avif" alt="imagem do produto" >
-                                        </div>
+                                    <div
+                                        class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
+                                        <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-10.avif"
+                                            alt="imagem do produto">
+                                    </div>
+                                    <div
+                                        class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
+                                        <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-1-v2.avif"
+                                            alt="imagem do produto">
+                                    </div>
+                                    <div
+                                        class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail">
+                                        <img src="assets/imgs/notebook-laptop-g15-5530-gray-gallery-4-v2.avif"
+                                            alt="imagem do produto">
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                
-                        <div class="mt-5 sm:p-6 lg:p-8">
-                            <h2 class="text-2xl font-bold text-gray-900">
-                                Notebook Dell Gamer G15
-                                </h2>
-                        
-                            <div class="mt-3 flex items-center">
-                                <span class="ml-0 font-semibold text-green-600">165 Unidades Disponíveis</span>
-                            </div>
-                        
-                            <p id="product-price" class="mt-6 text-3xl font-bold text-blue-800" data-unit-price="5099.00">R$ 5.099,00</p>
-                            <div class="mt-5 flex items-center gap-4">
-                                <div class="flex border border-gray-300 rounded-md overflow-hidden">
-                                    <button type="button" id="decrement-btn" class="p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
-                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
-                                        </svg>
-                                    </button>
-                                    <input type="number" id="product-quantity-input" value="1" min="1" class="w-12 text-center text-gray-700 focus:outline-none" readonly />
-                                    <button type="button" id="increment-btn" class="p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
-                                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                    <a href="carrinho.html">Adicionar ao carrinho</a>
-                                </button>
-                                <div class="mt-0 flex items-center gap-2 text-sm text-gray-700 hover:text-gray-800 focus:outline-none border border-gray-200 rounded-md py-2.5 px-3">
-                                    <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                    </svg>
-                                    <a href="favoritos.html">Adicionar aos Favoritos </a>
-                                </div>
-                            </div>
-                        
-                            <p class="mt-8 text-gray-700">
-                                Equipado com processador Intel Core i7 de 12ª geração, 16GB de RAM e placa de vídeo NVIDIA GeForce RTX 4060, o Dell G15 oferece desempenho incrível para jogos e tarefas exigentes. A tela Full HD de 15.6" com taxa de atualização de 120Hz proporciona imagens fluidas e imersivas.
-                            </p>
-                        
-                            <div class="mt-5 border-t pt-2 text-sm text-gray-600">
-                                <p><i class="bi bi-truck mr-2 text-green-500"></i> Entrega estimada: 3-5 dias úteis</p>
-                                <p class="mt-2"><i class="bi bi-arrow-return-left mr-2 text-blue-500"></i> Devolução fácil em até 30 dias</p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="mt-5 sm:p-6 lg:p-8">
+                        <h2 class="text-2xl font-bold text-gray-900">
+                            Notebook Dell Gamer G15
+                        </h2>
+
+                        <div class="mt-3 flex items-center">
+                            <span class="ml-0 font-semibold text-green-600">165 Unidades Disponíveis</span>
+                        </div>
+
+                        <p id="product-price" class="mt-6 text-3xl font-bold text-blue-800" data-unit-price="5099.00">R$
+                            5.099,00</p>
+                        <div class="mt-5 flex items-center gap-4">
+                            <div class="flex border border-gray-300 rounded-md overflow-hidden">
+                                <button type="button" id="decrement-btn"
+                                    class="p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
+                                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 18 2">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 1h16" />
+                                    </svg>
+                                </button>
+                                <input type="number" id="product-quantity-input" value="1" min="1"
+                                    class="w-12 text-center text-gray-700 focus:outline-none" readonly />
+                                <button type="button" id="increment-btn"
+                                    class="p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
+                                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 18 18">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M9 1v16M1 9h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <a onclick="adicionarCarrinho()" id="add-produto-carrinho">Adicionar ao carrinho</a>
+                            </button>
+                            <div
+                                class="mt-0 flex items-center gap-2 text-sm text-gray-700 hover:text-gray-800 focus:outline-none border border-gray-200 rounded-md py-2.5 px-3">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    id="heart-icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                                <a onclick="adicionarFavorito()" class="cursor-pointer"
+                                    id="add-produto-favorito">Adicionar aos Favoritos </a>
+                            </div>
+                        </div>
+
+                        <p class="mt-8 text-gray-700">
+                            Equipado com processador Intel Core i7 de 12ª geração, 16GB de RAM e placa de vídeo NVIDIA
+                            GeForce RTX 4060, o Dell G15 oferece desempenho incrível para jogos e tarefas exigentes. A
+                            tela Full HD de 15.6" com taxa de atualização de 120Hz proporciona imagens fluidas e
+                            imersivas.
+                        </p>
+
+                        <div class="mt-5 border-t pt-2 text-sm text-gray-600">
+                            <p><i class="bi bi-truck mr-2 text-green-500"></i> Entrega estimada: 3-5 dias úteis</p>
+                            <p class="mt-2"><i class="bi bi-arrow-return-left mr-2 text-blue-500"></i> Devolução fácil
+                                em até 30 dias</p>
+                        </div>
+                    </div>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
+    </div>
     </div>
     <div id="footer-container"></div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/JS/funcoes.js"></script>
     <script src="./assets/JS/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const produtoId = urlParams.get("id");
+            const nomeProdutoOriginal = urlParams.get("nomeProduto");
+
+            if (!produtoId || !nomeProdutoOriginal) return;
+
+            const nomeProduto = encodeURIComponent(nomeProdutoOriginal);
+
+            try {
+
+                const response = await http.get(`/Produto/${nomeProduto}`);
+                const produto = response.data;
+
+                if (!produto || produto.length === 0) {
+
+                    alert("Produto não encontrado!");
+                    window.location.href = "produtos.html";
+                    return;
+                }
+
+                document.getElementById("main-product-image").src = produto.imagemProduto[0]?.urlImagem || "assets/imgs/fallback.jpg";
+                document.querySelector("h2").textContent = produto.nome;
+
+                document.getElementById("product-price").textContent = `R$ ${produto.preco.toFixed(2).replace('.', ',')}`;
+                document.querySelector("p.mt-8").textContent = produto.descricao;
+
+                const thumbnails = document.getElementById("thumbnail-gallery");
+                thumbnails.innerHTML = "";
+
+                produto.imagemProduto.forEach((img, index) => {
+                    thumbnails.innerHTML += `
+                    <div class="w-20 h-20 rounded-md border border-gray-300 cursor-pointer bg-gray-100 flex items-center justify-center thumbnail ${index === 0 ? "active-thumbnail" : ""}">
+                        <img src="${img.urlImagem}" alt="imagem do produto">
+                    </div>`;
+                });
+
+
+                const favoritos = JSON.parse(localStorage.getItem("meusFavoritos")) || [];
+                const favorito = favoritos.find(item => item.id === localStorage.getItem("id") && item.produtoId === produtoId);
+
+                if (favorito) {
+
+                    const heartIcon = document.getElementById("heart-icon");
+
+                    heartIcon.classList.remove("text-gray-500");
+                    heartIcon.classList.add("text-red-500");
+
+                    document.getElementById("add-produto-favorito").disabled = true;
+                    document.getElementById("add-produto-favorito").textContent = "Produto já adicionado aos favoritos";
+                }
+
+            } catch (err) {
+                console.error("Erro ao carregar produto:", err);
+            }
+        });
+
+        function adicionarFavorito() {
+
+            const id = localStorage.getItem("id");
+
+            if (!id) {
+
+                alert("Você precisa estar logado para adicionar aos favoritos.");
+                return;
+            }
+
+            const produtoId = new URLSearchParams(window.location.search).get("id");
+            const nome = document.querySelector("h2").textContent;
+
+            const precoTexto = document.getElementById("product-price").textContent.replace("R$", "").trim().replace(".", "").replace(",", ".");
+            const preco = parseFloat(precoTexto);
+
+            const descricao = document.querySelector("p.mt-8").textContent;
+            const imagem = document.getElementById("main-product-image").src;
+
+            const novoFavorito = {
+                id,
+                produtoId,
+                nome,
+                preco,
+                descricao,
+                imagem
+            };
+
+            let favoritos = JSON.parse(localStorage.getItem("meusFavoritos")) || [];
+            const existe = favoritos.some(item => item.id === id && item.produtoId === produtoId);
+
+            if (existe) {
+
+                alert("Este produto já está nos seus favoritos.");
+                return;
+            }
+
+            favoritos.push(novoFavorito);
+            localStorage.setItem("meusFavoritos", JSON.stringify(favoritos));
+
+            alert("Produto adicionado aos favoritos com sucesso!");
+            document.getElementById("add-produto-favorito").disabled = true;
+
+            document.getElementById("add-produto-favorito").textContent = "Produto adicionado aos favoritos";
+            const heartIcon = document.getElementById("heart-icon");
+
+            heartIcon.classList.remove("text-gray-500");
+            heartIcon.classList.add("text-red-500");
+            location.reload();
+        }
+
+        function adicionarCarrinho() {
+
+            const idUsuario = localStorage.getItem("id");
+
+            if (!idUsuario) {
+
+                alert("Você precisa estar logado para adicionar ao carrinho.");
+                return;
+            }
+
+            const produtoId = new URLSearchParams(window.location.search).get("id");
+            const nome = document.querySelector("h2").textContent;
+
+            const precoTexto = document.getElementById("product-price").textContent.replace("R$", "").trim().replace(".", "").replace(",", ".");
+            const preco = parseFloat(precoTexto);
+
+            const descricao = document.querySelector("p.mt-8").textContent;
+            const imagem = document.getElementById("main-product-image").src;
+
+            const quantidadeInput = document.getElementById("product-quantity-input");
+            const quantidade = quantidadeInput ? parseInt(quantidadeInput.value) : 1;
+
+            if (quantidade < 1 || isNaN(quantidade)) {
+                alert("Quantidade inválida.");
+                return;
+            }
+
+            let carrinhos = JSON.parse(localStorage.getItem("meusCarrinhos")) || [];
+            const indexExistente = carrinhos.findIndex(item => item.idUsuario === idUsuario && item.produtoId === produtoId);
+
+            if (indexExistente > -1) {
+
+                carrinhos[indexExistente].quantidade += quantidade;
+
+            } else {
+
+                const novoCarrinho = {
+                    idUsuario,
+                    produtoId,
+                    nome,
+                    preco,
+                    descricao,
+                    imagem,
+                    quantidade
+                };
+
+                carrinhos.push(novoCarrinho);
+
+            }
+
+            localStorage.setItem("meusCarrinhos", JSON.stringify(carrinhos));
+
+            alert("Produto adicionado ao carrinho com sucesso!");
+            location.reload();
+        }
+
+        function setupQuantityControls() {
+            // Incrementar quantidade
+            document.getElementById('increment-btn')?.addEventListener('click', function () {
+                const input = document.getElementById('product-quantity-input');
+                if (input) {
+                    let value = parseInt(input.value);
+                    input.value = value + 1;
+                    atualizarPrecoTotal();
+                }
+            });
+
+            // Decrementar quantidade
+            document.getElementById('decrement-btn')?.addEventListener('click', function () {
+                const input = document.getElementById('product-quantity-input');
+                if (input) {
+                    let value = parseInt(input.value);
+                    if (value > 1) {
+                        input.value = value - 1;
+                        atualizarPrecoTotal();
+                    }
+                }
+            });
+        }
+
+        function atualizarPrecoTotal() {
+            const quantidade = parseInt(document.getElementById('product-quantity-input')?.value || 1);
+            const precoElement = document.getElementById('product-price');
+
+            if (precoElement) {
+                const precoUnitario = parseFloat(precoElement.getAttribute('data-unit-price') ||
+                    precoElement.textContent.replace('R$', '').trim().replace('.', '').replace(',', '.'));
+
+                const precoTotal = quantidade * precoUnitario;
+
+                precoElement.textContent = 'R$ ' +
+                    precoTotal.toFixed(2)
+                        .replace('.', ',')
+                        .replace(/(\d)(?=(\d{3})+\,)/g, '$1.');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setupQuantityControls();
+
+            const precoElement = document.getElementById('product-price');
+            if (precoElement && !precoElement.hasAttribute('data-unit-price')) {
+                const precoTexto = precoElement.textContent.replace('R$', '').trim().replace('.', '').replace(',', '.');
+                precoElement.setAttribute('data-unit-price', precoTexto);
+            }
+        });
+
+    </script>
+
 </body>
+
 </html>

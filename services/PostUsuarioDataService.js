@@ -1,4 +1,4 @@
-import http from "./http-common"
+import http from "../http-common.js";
 
 class PostUsuarioDataService {
     async getById(id) {
@@ -27,13 +27,25 @@ class PostUsuarioDataService {
         }
     }
 
+    async delete(cpf){
+
+        try {
+
+            return await http.delete(`/Usuario/delete/${cpf}`);
+
+        } catch(error) {
+
+            console.error(`Erro ao deletar usuário com id ${cpf}:`, error);
+            throw error;
+        }
+    }
 
     async insert(formData) {
 
         try {
 
             return await http.post("/Usuario", formData, {
-                headers: {"Content-Type": "multipart/form-data"},
+                headers: {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*"},
             });
 
         } catch (error) {

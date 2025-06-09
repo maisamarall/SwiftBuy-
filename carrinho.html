@@ -16,7 +16,7 @@
 <body class="bg-gray-100 overflow-x-hidden">
     <script>
         window.onload = function () {
-            criarNavbar(); 
+            criarNavbar();
         };
     </script>
 
@@ -31,146 +31,6 @@
                     <hr class="w-full my-4">
 
                     <div id="carrinho-itens" class="space-y-6">
-                        <div
-                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
-                            data-id="1" data-preco="5099.00" data-nome="Notebook Dell Gamer G15">
-                            <a href="teladetalhe" class="shrink-0">
-                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md" src="assets/imgs/notebook-laptop.avif"
-                                    alt="Notebook Dell Gamer G15" />
-                            </a>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-semibold text-gray-900">Notebook Dell Gamer G15</h3>
-                                <div class="flex items-center mt-2">
-                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
-                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
-                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M1 1h16" />
-                                            </svg>
-                                        </button>
-                                        <input type="text"
-                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
-                                            value="1" readonly />
-                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
-                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 18 18">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 1v16M1 9h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 5.099,00</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
-                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 5.099,00</p>
-                                <button type="button"
-                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
-                                    <i class="bi bi-trash3-fill mr-1"></i>
-                                    <span>Remover</span>
-                                </button>
-                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar o Notebook Dell Gamer G15."
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
-                                    <i class="bi bi-whatsapp mr-1"></i>
-                                    <span>Comprar</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
-                            data-id="2" data-preco="8159.98" data-nome="Samsung Galaxy S25 Ultra 5G">
-                            <a href="#" class="shrink-0">
-                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md"
-                                    src="./assets/imgs/carrinho-produto/produto_2.jpg" alt="Samsung Galaxy S25 Ultra 5G" />
-                            </a>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-semibold text-gray-900">Samsung Galaxy S25 Ultra 5G</h3>
-                                <div class="flex items-center mt-2">
-                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
-                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
-                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M1 1h16" />
-                                            </svg>
-                                        </button>
-                                        <input type="text"
-                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
-                                            value="1" readonly />
-                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
-                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 18 18">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 1v16M1 9h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 8.159,98</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
-                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 8.159,98</p>
-                                <button type="button"
-                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
-                                    <i class="bi bi-trash3-fill mr-1"></i>
-                                    <span>Remover</span>
-                                </button>
-                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar o Samsung Galaxy S25 Ultra 5G."
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
-                                    <i class="bi bi-whatsapp mr-1"></i>
-                                    <span>Comprar</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item"
-                            data-id="3" data-preco="110.00" data-nome="Capa Protetora Premium Roxa">
-                            <a href="#" class="shrink-0">
-                                <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md"
-                                    src="./assets/imgs/carrinho-produto/produto_3.jpg" alt="Capa Protetora Premium Roxa" />
-                            </a>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-semibold text-gray-900">Capa Protetora Premium Roxa</h3>
-                                <div class="flex items-center mt-2">
-                                    <div class="inline-flex items-center border border-gray-300 rounded-md">
-                                        <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
-                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M1 1h16" />
-                                            </svg>
-                                        </button>
-                                        <input type="text"
-                                            class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none"
-                                            value="1" readonly />
-                                        <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
-                                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 18 18">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 1v16M1 9h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">R$ 110,00</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
-                                <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">R$ 110,00</p>
-                                <button type="button"
-                                    class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80">
-                                    <i class="bi bi-trash3-fill mr-1"></i>
-                                    <span>Remover</span>
-                                </button>
-                                <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar a Capa Protetora Premium Roxa."
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
-                                    <i class="bi bi-whatsapp mr-1"></i>
-                                    <span>Comprar</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <h2 class="text-xl font-bold text-gray-900 mt-8">Frete:</h2>
@@ -201,7 +61,8 @@
                         <div class="ml-4 space-y-2">
                             <div class="flex items-center justify-between text-sm">
                                 <div class="flex items-center gap-2">
-                                    <input type="radio" id="standard" name="shipping" value="15.00" class="accent-blue-600">
+                                    <input type="radio" id="standard" name="shipping" value="15.00"
+                                        class="accent-blue-600">
                                     <label for="standard" class="text-gray-700">
                                         Padrão (<span id="prazo-padrao">3-5 dias úteis</span>)
                                     </label>
@@ -210,7 +71,8 @@
                             </div>
                             <div class="flex items-center justify-between text-sm">
                                 <div class="flex items-center gap-2">
-                                    <input type="radio" id="express" name="shipping" value="25.00" class="accent-blue-600">
+                                    <input type="radio" id="express" name="shipping" value="25.00"
+                                        class="accent-blue-600">
                                     <label for="express" class="text-gray-700">
                                         Expresso (1-2 dias úteis)
                                     </label>
@@ -273,7 +135,6 @@
         </div>
     </main>
 
-    <script src="./assets/JS/carrinho.js"></script>
     <div
         class="recomendacoes flex items-center justify-center mt-6 lg:mt-8 print:flex print:justify-center print:items-center ml-10 mr-10">
         <div class="xl:mt-8 sm:block md:block lg:block xl:block">
@@ -285,13 +146,14 @@
                     <div class="p-4 flex flex-col items-center">
 
                         <a href="#" class="overflow-hidden rounded">
-                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto1.png"
-                                alt="Produto 1" />
+                            <img class="mx-auto h-36 w-36 object-cover mb-10"
+                                src="./assets/imgs/carrinho-recomendacoes/produto1.png" alt="Produto 1" />
                         </a>
 
                         <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Saco De Bater</h3>
 
-                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Ideal para boxe, muay thai e outras
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Ideal para boxe, muay thai
+                            e outras
                             artes marciais...</p>
 
                         <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 136,00</p>
@@ -299,7 +161,8 @@
                         <div class="flex gap-2 w-full items-center justify-center">
                             <a href="favoritos.html">
                                 <button class="flex items-center justify-center">
-                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                    <i
+                                        class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
                                 </button>
                             </a>
 
@@ -324,7 +187,8 @@
 
                         <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Notebook Dell Gamer G15</h3>
 
-                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Equipado com processador Intel Core i7
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Equipado com processador
+                            Intel Core i7
                             de 12ª geração, 16GB de RAM e placa...</p>
 
                         <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 5.099,00</p>
@@ -332,7 +196,8 @@
                         <div class="flex gap-2 w-full items-center justify-center">
                             <a href="favoritos.html">
                                 <button class="flex items-center justify-center">
-                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                    <i
+                                        class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
                                 </button>
                             </a>
 
@@ -351,13 +216,14 @@
                     <div class="p-4 flex flex-col items-center">
 
                         <a href="#" class="overflow-hidden rounded">
-                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto3.jpg"
-                                alt="Produto 3" />
+                            <img class="mx-auto h-36 w-36 object-cover mb-10"
+                                src="./assets/imgs/carrinho-recomendacoes/produto3.jpg" alt="Produto 3" />
                         </a>
 
                         <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Fone de Ouvido Samsung</h3>
 
-                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Cancelamento de ruído, bateria de longa
+                        <p class="mt-2 text-[14px] font-bold text-gray-700 text-center mb-1">Cancelamento de ruído,
+                            bateria de longa
                             duração.</p>
 
                         <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$ 199,90</p>
@@ -365,7 +231,8 @@
                         <div class="flex gap-2 w-full items-center justify-center">
                             <a href="favoritos.html">
                                 <button class="flex items-center justify-center">
-                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                    <i
+                                        class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
                                 </button>
                             </a>
 
@@ -384,13 +251,14 @@
                     <div class="p-4 flex flex-col items-center">
 
                         <a href="#" class="overflow-hidden rounded">
-                            <img class="mx-auto h-36 w-36 object-cover mb-10" src="./assets/imgs/carrinho-recomendacoes/produto4.jpg"
-                                alt="Produto 4" />
+                            <img class="mx-auto h-36 w-36 object-cover mb-10"
+                                src="./assets/imgs/carrinho-recomendacoes/produto4.jpg" alt="Produto 4" />
                         </a>
 
                         <h3 class="text-[16px] font-bold text-blue-900 mt-5 text-center">Mouse Sem Fio Recarregável</h3>
 
-                        <p class="mt-2 text-[14px] font-bold font-text-gray-700 text-center mb-1">Clique silencioso, design
+                        <p class="mt-2 text-[14px] font-bold font-text-gray-700 text-center mb-1">Clique silencioso,
+                            design
                             anatômico e bateria recarregável via cabo USB.</p>
 
                         <p class="preco text-lg font-bold text-gray-700 mt-5 mb-5">R$29,90</p>
@@ -398,7 +266,8 @@
                         <div class="flex gap-2 w-full items-center justify-center">
                             <a href="favoritos.html">
                                 <button class="flex items-center justify-center">
-                                    <i class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
+                                    <i
+                                        class="bi bi-heart md:text-[25px] text-gray-700 hover:text-red-500 focus:text-red-500"></i>
                                 </button>
                             </a>
 
@@ -432,9 +301,130 @@
 
 
     <div id="footer-container"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/JS/funcoes.js"></script>
     <script src="./assets/JS/script.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const container = document.getElementById("carrinho-itens");
+            const containerResumoProdutos = document.getElementById("resumo-produtos");
+            const resumoTotal = document.getElementById("resumo-total");
+            const subTotal = document.getElementById("resumo-subtotal");
+            var precoTotal = 0;
+            const idUsuario = localStorage.getItem("id");
+            const produtosNoCarrinho = JSON.parse(localStorage.getItem("meusCarrinhos") || '[]').filter(item => item.idUsuario === idUsuario);
+
+            if (produtosNoCarrinho.length > 0 && container && containerResumoProdutos) {
+
+                container.innerHTML = produtosNoCarrinho.map(produto => {
+
+                    const nomeProduto = encodeURIComponent(produto.nome);
+
+                    precoTotal += produto.preco * produto.quantidade;
+                    const precoFormatado = produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+                    return `<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-4 border-b border-gray-200 last:border-b-0 produto-item" data-id="${produto.produtoId}" data-preco="${produto.preco}" data-nome="${produto.nome}">
+                                <a href="teladetalhe.html?id=${produto.produtoId}&nomeProduto=${nomeProduto}" class="shrink-0">
+                                    <img class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-md" src="${produto.imagem}" alt="${produto.nome}" />
+                                </a>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-semibold text-gray-900">${produto.nome}</h3>
+                                    <div class="flex items-center mt-2">
+                                        <div class="inline-flex items-center border border-gray-300 rounded-md">
+                                            <button type="button" class="decrement-btn p-2 text-gray-700 hover:bg-gray-100 rounded-l-md">
+                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                                </svg>
+                                            </button>
+                                            <input type="text" class="quantidade-input w-10 text-center text-base font-semibold text-gray-900 bg-white border-x border-gray-300 focus:outline-none" value="${produto.quantidade}" readonly />
+                                            <button type="button" class="increment-btn p-2 text-gray-700 hover:bg-gray-100 rounded-r-md">
+                                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <p class="text-xl font-bold text-gray-900 ml-auto md:hidden preco-item">${precoFormatado}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 mt-2 md:mt-0 md:ml-4">
+                                    <p class="hidden md:block text-xl font-bold text-gray-900 preco-item mr-4">${precoFormatado}</p>
+                                    <button type="button" class="remover-btn p-2 inline-flex items-center text-sm font-semibold text-red-600 bg-white border border-red-600 rounded-lg hover:bg-red-50 active:opacity-80" onclick="removerDoCarrinho(${produto.produtoId})">
+                                        <i class="bi bi-trash3-fill mr-1"></i>
+                                        <span>Remover</span>
+                                    </button>
+                                    <a href="https://wa.me/+5514997837479?text=Olá, gostaria de comprar o ${encodeURIComponent(produto.nome)}." target="_blank" rel="noopener noreferrer"
+                                        class="p-2 inline-flex items-center text-sm font-semibold text-green-600 bg-white border border-green-600 rounded-lg hover:bg-green-50 active:opacity-80">
+                                        <i class="bi bi-whatsapp mr-1"></i>
+                                        <span>Comprar</span>
+                                    </a>
+                                </div>
+                            </div>`;
+                }).join('');
+
+                containerResumoProdutos.innerHTML = produtosNoCarrinho.map(produto => {
+
+                    var precoTotal = 0;
+                    var qtdeComprada = 1;
+
+                    if (produto.quantidade > 1) {
+
+                        precoTotal += produto.preco * produto.quantidade;
+                        qtdeComprada = produto.quantidade;
+
+                    } else {
+
+                        precoTotal += produto.preco;
+                    }
+
+                    const precoFormatado = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                    const nomeProduto = produto.nome.substring(0, 29);
+
+                    var htmlQtdeComprada = '';
+
+                    if (qtdeComprada > 1) {
+
+                        htmlQtdeComprada = `(x${qtdeComprada})`;
+                    }
+
+                    return `<div class="flex justify-between text-sm">
+                                <span class="text-gray-700">${nomeProduto} ${htmlQtdeComprada}</span>
+                                <span class="text-gray-700">${precoFormatado}</span>
+                            </div>`;
+
+                }).join('');
+
+
+                const totalPreco = produtosNoCarrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
+                const totalPrecoFormatado = totalPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                resumoTotal.innerHTML = `${totalPrecoFormatado}`;
+                subTotal.innerHTML = `${totalPrecoFormatado}`
+
+            }
+
+            
+        });
+
+        function removerDoCarrinho(produtoId) {
+
+            if (confirm("Deseja realmente remover o produto do carrinho?")) {
+
+                const produtosNoCarrinho = JSON.parse(localStorage.getItem('meusCarrinhos')) || [];
+                const index = produtosNoCarrinho.findIndex(produto => produto.produtoId == produtoId);
+
+                if (index !== -1) {
+                    
+                    produtosNoCarrinho.splice(index, 1);
+                    localStorage.setItem('meusCarrinhos', JSON.stringify(produtosNoCarrinho));
+                    location.reload();
+                }
+            }
+                
+        }
+
+        
+    </script>
 </body>
 
 </html>

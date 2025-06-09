@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Lexend+Tera&family=Wix+Madefor+Display:wght@400..800&display=swap');
 
 * {
     font-family: "Urbanist", sans-serif;
@@ -15,5 +16,5 @@
 }
 
 .titulo {
-    font-family: "Archivo Black", sans-serif;
+      font-family: "Wix Madefor Display", sans-serif;
 }

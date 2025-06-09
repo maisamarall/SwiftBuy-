@@ -18,9 +18,10 @@ criarCard = (produto) => {
           <p class="mb-2 ml-3 mt-2 text-[13px] lg:text-base lg:ml-4 line-clamp-2 truncate">R$${produto.preco}</p>
         </div>
         <div class="flex gap-2 mt-2">
-            <button class="text-gray-600 hover:text-gray-800 w-25" onclick="editarProduto('${produto.id}', '${produto.nome}', '${produto.descricao}', '${produto.preco}', '${imagensPorVirgula}')">
-                <i class="bi bi-pencil-square"></i>
+            <button class="text-gray-600 hover:text-gray-800 w-25" onclick="editarProduto('${produto.id}', decodeURIComponent('${encodeURIComponent(produto.nome)}'), decodeURIComponent('${encodeURIComponent(produto.descricao)}'), '${produto.preco}', '${encodeURIComponent(imagensPorVirgula)}')">
+            <i class="bi bi-pencil-square"></i>
             </button>
+
             <button class="text-gray-600 hover:text-gray-800 w-25" onclick="excluirProduto(${produto.id})">
                 <i class="bi bi-trash"></i>
             </button>
@@ -65,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function editarProduto(id, titulo, descricao, preco, imagens) {
 
+    titulo = decodeURIComponent(titulo);
+    descricao = decodeURIComponent(descricao);
+    imagens = decodeURIComponent(imagens);
+
     const formCadastrar = document.getElementById("form-cadastrar");
     const addProduto = document.getElementById("btnAdicionarProduto");
     const atualizarProduto = document.getElementById("btnEditarProduto");
@@ -79,8 +84,9 @@ function editarProduto(id, titulo, descricao, preco, imagens) {
     document.getElementById("nomeProduto").value = titulo;
     document.getElementById("descricaoProduto").value = descricao;
     document.getElementById("precoProduto").value = preco;
-    document.getElementById("imagensProduto").value = imagens;    
+    document.getElementById("imagensProduto").value = imagens;
 }
+
 
 function getProdutos(page = 1) {
 
