@@ -124,19 +124,16 @@ function criarNavbar() {
           </div>
       </nav>
   
-      <main>
-          <div class="w-full flex items-center justify-center text-gray-100 font-semibold text-sm lg:text-base gap-7 pt-2 pb-2 justify-center bg-gradient-to-r from-slate-800 to-slate-900 shadow-md">
-              <a href="acessados.html">
-                  <p class="hover:border-b-2 hover:border-full inline-block">Mais acessados</p>
-              </a>
-              <a href="lancamentos.html">
-                  <p class="hover:border-b-2 hover:border-full inline-block">Lançamentos</p>
-              </a>
-              <a href="promocoes.html">
-                  <p class="hover:border-b-2 hover:border-full inline-block">Promoções</p>
-              </a>
-          </div>
-      </nav>
+    <main class="mt-7">
+        <div class="w-full flex items-center justify-center text-gray-100 font-semibold text-sm lg:text-base gap-7 pt-2 pb-2 justify-center bg-gradient-to-r from-slate-800 to-slate-900 shadow-md">
+            <a href="acessados.html">
+                <p class="hover:border-b-2 hover:border-full inline-block">Mais vendidos</p>
+            </a>
+            <a href="produtos.html">
+                <p class="hover:border-b-2 hover:border-full inline-block">Produtos</p>
+            </a>
+        </div>
+    </main>
     `;
 
     document.body.insertAdjacentHTML('afterbegin', navHTML);
@@ -367,7 +364,7 @@ async function getProdutosMaisVendidos() {
     const produtosMaisVendidos = response.data;
 
     const gridContainer = document.createElement("div");
-    gridContainer.className = "w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-y-5 px-5";
+    gridContainer.className = "w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-y-5 gap-x-6 px-5";
 
     if (container !== null) {
         produtosMaisVendidos.forEach(produto => {
@@ -377,7 +374,7 @@ async function getProdutosMaisVendidos() {
             const card = document.createElement("a");
             card.href = `teladetalhe.html?id=${produto.id}&nomeProduto=${nomeProduto}`;
             card.innerHTML = `
-            <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-transparent hover:border-2 hover:border-blue-400">
+            <div class="bg-[#F9FAFB] text-[10px] lg:text-[13px] font-semibold text-gray-700 p-2 h-52 w-35 lg:h-70 lg:w-45 rounded-lg shadow-md border-2 border-transparent hover:border-2 hover:border-blue-400">
                 <img src="${produto.imagemProduto[0].urlImagem}" alt="${produto.nome}" class="w-20 h-20 ml-6 mt-2 lg:w-32 lg:h-30 lg:mt-2">
                 <p class="lg:text-[17px] font-bold text-gray-800 lg:ml-4 lg:mt-6 text-[14px] mt-2 ml-3 truncate">${produto.nome}</p>
                 <p class="ml-3 mt-1 text-[13px] lg:text-base lg:ml-4 lg:mt-2 preco">R$ ${precoProduto}</p>

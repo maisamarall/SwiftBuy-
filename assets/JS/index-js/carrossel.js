@@ -1,11 +1,23 @@
 // CARROSSEL
 const banners = [
     {
-        img: "./assets/imgs/index-imgs/Captura de tela 2025-04-28 162103.png",
+        img: "./assets/imgs/index-imgs/cell.png",
         alt: "Mais Vendidos",
         text: "Mais Vendidos",
         link: "./produtos.html"
-    }
+    },
+    {
+        img: "./assets/imgs/index-imgs/fone.jpg",
+        alt: "Produtos",
+        text: "Mais Vendidos",
+        link: "./produtos.html"
+    },
+    {
+        img: "./assets/imgs/index-imgs/note.jpeg",
+        alt: "Mais Vendidos",
+        text: "Mais Vendidos",
+        link: "./produtos.html"
+    },
 ];
 
 let slideAtual = 0;
