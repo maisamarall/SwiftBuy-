@@ -124,7 +124,7 @@ function criarNavbar() {
           </div>
       </nav>
   
-    <main class="mt-7">
+    <main class="mt-16">
         <div class="w-full flex items-center justify-center text-gray-100 font-semibold text-sm lg:text-base gap-7 pt-2 pb-2 justify-center bg-gradient-to-r from-slate-800 to-slate-900 shadow-md">
             <a href="acessados.html">
                 <p class="hover:border-b-2 hover:border-full inline-block">Mais vendidos</p>
